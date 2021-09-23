@@ -1,1 +1,40 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
 
+int a,b,c;
+
+int thefirst(a,b,c)
+{
+	int di;
+	cout << "введите а,б,с переменные" << endl;
+	cin >> a >> b >> c;
+	di = (b^2)-4*a*c;
+	cout << di;
+	return 0;
+}
+
+int thesecond(a,b,c)
+{
+    int r;
+    cout << "введите переменные" << endl;
+    cin >> a >> b >> c;
+    r = a*8-b+2*c;
+    if(r>=0){
+        cout << r << endl;
+        return 0;
+    }
+    else {
+        cout << "err";
+        return 1;
+    }
+}
+
+
+int main()
+{
+    cin >> a >> b >> c;
+    cout << thefirst(a,b,c) << endl;
+    cout << thesecond(a,b,c) << endl;
+    return 0;
+}
