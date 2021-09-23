@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << "введи а б с переменные" << endl;
+	int a,b,c;
+	cin >> a >> b >> c;
+	float r = 2*a+4*b/static_cast<float>(c);
+	cout << "2a+4b/c = " << r;
+}
