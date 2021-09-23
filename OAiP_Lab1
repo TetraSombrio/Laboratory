@@ -9,3 +9,4 @@ int main()
 	float r = 2*a+4*b/static_cast<float>(c);
 	cout << "2a+4b/c = " << r;
 }
+//https://programforyou.ru/block-diagram-redactor вот тут блоксхему бахнуть
