@@ -1,0 +1,96 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+#define pi 3.14
+//кароче выбираем функцию, вводим данные, и оно считает
+//
+
+int f1quest(int &a, int &b, int r)
+{
+    if (r == 0)
+    {
+        return(a * b);
+    }
+    else
+    {
+        return((a + b) * 2);
+    }
+}
+
+int f2quest(int &d, int r)
+{
+    if (r == 2)
+    {
+        return(pi * d);
+    }
+}
+
+int f3quest(int &a, int &b, int r)
+{
+    if (r == 3)
+    {
+        return((a+b)/2);
+    }
+}
+
+int f4quest(int &a, int &b, int r)
+{
+    int res;
+    if (a>0 and b>0 and r == 4)
+    {
+        cout << a+b << a-b << a*b << endl;
+        res = a^2/b^2;//считаем
+        return(res);//выводим
+   }
+}
+
+int f5quest(int &a, int &b, int r)
+{
+    int res;
+    if (a>0 and b>0 and r == 4)
+    {
+        cout << abs(a)+abs(b) << abs(a)-abs(b) << abs(a)*abs(b) << endl;
+        res = abs(a)/abs(b);
+        return(res);
+    }
+}
+
+int main()
+{
+    int a,b,d;
+    int r;
+    cout << "выбор функций нахождения: 0=площадь прямоугл. 1=периметр прямоугл. 2=длинна окр." << endl;
+    cout << "3=ср арифм. 4=комплект1. 5=комплект2" << endl;
+    cin >> r;//ввод r определяет номер функции, которую вызовет программа
+    if (r == 1 or 0)//тут тупо перебор имеющихся значений. Так как это программа не для конечного пользователя, то системы защиты делать я не стал.
+    {
+        cout << "введите а и b" << endl;
+        cin >> a >> b;
+        cout << f1quest(a,b,r) << endl;
+    }
+    else if (r == 2)
+    {
+        cout << "введите диаметр окружности" << endl;
+        cin >> d;
+        cout << f2quest(r,d) << endl;
+    }
+    else if (r == 3)
+    {
+        cout << "введите а и b" << endl;
+        cin >> a >> b;
+        cout << f3quest(a,b,r) << endl;
+    }
+    else if (r == 4)
+    {
+        cout << "введите а,b" << endl;
+        cin >> a >> b;
+        cout << f4quest << endl;
+    }
+    else if (r == 5)
+    {
+        cout << "введите а,b" << endl;
+        cin >> a >> b;
+        cout << f5quest << endl;
+    }
+    return 0;
+}
