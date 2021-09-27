@@ -33,15 +33,17 @@ int f3quest(int &a, int &b, int r)
     }
 }
 
-int f4quest(int &a, int &b, int r)
+float f4quest(float a, float b, int num2)
 {
-    int res;
     if (a>0 and b>0 and r == 4)
     {
-        cout << a+b << a-b << a*b << endl;
-        res = a^2/b^2;//считаем
-        return(res);//выводим
-   }
+        float res[4] = {};
+        res[0] = a+b;
+        res[1] = a-b;
+        res[2] = a*b;
+        res[3] = a^2/b^2;
+        return(res[num2]);
+    }
 }
 
 float f5quest(float a, float b, int num)
@@ -59,7 +61,7 @@ float f5quest(float a, float b, int num)
 int main()
 {
     float a,b,d;
-    int r,num;
+    int r,num, num2;
     cout << "выбор функций нахождения: 0=площадь прямоугл. 1=периметр прямоугл. 2=длинна окр." << endl;
     cout << "3=ср арифм. 4=комплект1. 5=комплект2" << endl;
     cin >> r;//ввод r определяет номер функции, которую вызовет программа
@@ -85,7 +87,8 @@ int main()
     {
         cout << "введите а,b" << endl;
         cin >> a >> b;
-        cout << f4quest << endl;
+        cin >> num2;
+        cout << f4quest(a, b, num2) << endl;
     }
     else if (r == 5)
     {
