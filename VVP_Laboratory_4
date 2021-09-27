@@ -46,7 +46,7 @@ int f4quest(int &a, int &b, int r)
 
 float f5quest(float a, float b, int num)
 {
-    if (a>0 and b>0)
+    if (a>0 and b>0 and r == 5)
     {
         float res[4] = {};
         res[0] = abs(a)+abs(b);
