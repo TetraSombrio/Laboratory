@@ -5,7 +5,7 @@ using namespace std;
 //кароче выбираем функцию, вводим данные, и оно считает
 //
 
-int f1quest(int &a, int &b, int r)
+int f1quest(int a, int b, int r)
 {
     if (r == 0)
     {
@@ -25,7 +25,7 @@ int f2quest(int &d, int r)
     }
 }
 
-int f3quest(int &a, int &b, int r)
+int f3quest(int a, int b, int r)
 {
     if (r == 3)
     {
@@ -33,32 +33,35 @@ int f3quest(int &a, int &b, int r)
     }
 }
 
-int f4quest(int &a, int &b, int r)
+float f4quest(float a, float b, int r, int num2)
 {
-    int res;
     if (a>0 and b>0 and r == 4)
     {
-        cout << a+b << a-b << a*b << endl;
-        res = a^2/b^2;//считаем
-        return(res);//выводим
-   }
-}
-
-int f5quest(int &a, int &b, int r)
-{
-    int res;
-    if (a>0 and b>0 and r == 4)
-    {
-        cout << abs(a)+abs(b) << abs(a)-abs(b) << abs(a)*abs(b) << endl;
-        res = abs(a)/abs(b);
-        return(res);
+        float res[4] = {};
+        res[0] = a+b;
+        res[1] = a-b;
+        res[2] = a*b;
+        res[3] = pow(a, 2)/pow(b, 2);
+        return(res[num2]);
     }
 }
 
+float f5quest(float a, float b, int r, int num)
+{
+    if (a>0 and b>0 and r == 5)
+    {
+        float res[4] = {};
+        res[0] = abs(a)+abs(b);
+        res[1] = abs(a)-abs(b);
+        res[2] = abs(a)*abs(b);
+        res[3] = abs(a)/abs(b);
+        return(res[num]);
+    }
+}
 int main()
 {
-    int a,b,d;
-    int r;
+    float a,b,d;
+    int r,num, num2;
     cout << "выбор функций нахождения: 0=площадь прямоугл. 1=периметр прямоугл. 2=длинна окр." << endl;
     cout << "3=ср арифм. 4=комплект1. 5=комплект2" << endl;
     cin >> r;//ввод r определяет номер функции, которую вызовет программа
@@ -84,13 +87,14 @@ int main()
     {
         cout << "введите а,b" << endl;
         cin >> a >> b;
-        cout << f4quest << endl;
+        cin >> num2;
+        cout << f4quest(a, b, r, num2) << endl;
     }
     else if (r == 5)
     {
-        cout << "введите а,b" << endl;
         cin >> a >> b;
-        cout << f5quest << endl;
+        cin >> num;
+        cout << f5quest(a, b, r, num) << endl;
     }
     return 0;
 }
