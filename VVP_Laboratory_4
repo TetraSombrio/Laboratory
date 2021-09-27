@@ -5,7 +5,7 @@ using namespace std;
 //кароче выбираем функцию, вводим данные, и оно считает
 //
 
-int f1quest(int &a, int &b, int r)
+int f1quest(int a, int b, int r)
 {
     if (r == 0)
     {
@@ -25,7 +25,7 @@ int f2quest(int &d, int r)
     }
 }
 
-int f3quest(int &a, int &b, int r)
+int f3quest(int a, int b, int r)
 {
     if (r == 3)
     {
@@ -33,7 +33,7 @@ int f3quest(int &a, int &b, int r)
     }
 }
 
-float f4quest(float a, float b, int num2)
+float f4quest(float a, float b, int r, int num2)
 {
     if (a>0 and b>0 and r == 4)
     {
@@ -41,12 +41,12 @@ float f4quest(float a, float b, int num2)
         res[0] = a+b;
         res[1] = a-b;
         res[2] = a*b;
-        res[3] = a^2/b^2;
+        res[3] = pow(a, 2)/pow(b, 2);
         return(res[num2]);
     }
 }
 
-float f5quest(float a, float b, int num)
+float f5quest(float a, float b, int r, int num)
 {
     if (a>0 and b>0 and r == 5)
     {
@@ -88,13 +88,13 @@ int main()
         cout << "введите а,b" << endl;
         cin >> a >> b;
         cin >> num2;
-        cout << f4quest(a, b, num2) << endl;
+        cout << f4quest(a, b, r, num2) << endl;
     }
     else if (r == 5)
     {
         cin >> a >> b;
         cin >> num;
-        cout << f5quest(a, b, num) << endl;
+        cout << f5quest(a, b, r, num) << endl;
     }
     return 0;
 }
