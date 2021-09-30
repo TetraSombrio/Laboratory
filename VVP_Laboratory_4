@@ -19,7 +19,7 @@ float f2quest(float d, int r)
     float pi = 3.14;
     if (r == 2)
     {
-        return(d*pi);
+        return(d * pi);
     }
 }
 
@@ -27,7 +27,7 @@ float f3quest(float a, float b, int r)
 {
     if (r == 3)
     {
-        return((a+b)/2);
+        return((a + b) / 2);
     }
 }
 
