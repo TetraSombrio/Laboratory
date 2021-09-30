@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-//кароче выбираем функцию, вводим данные, и оно считает
 
 int f1quest(int a, int b, int r)
 {
@@ -15,16 +14,16 @@ int f1quest(int a, int b, int r)
     }
 }
 
-int f2quest(int d, int r)
+float f2quest(float d, int r)
 {
     float pi = 3.14;
     if (r == 2)
     {
-        return(float(pi * d));
+        return(d*pi);
     }
 }
 
-int f3quest(int a, int b, int r)
+float f3quest(float a, float b, int r)
 {
     if (r == 3)
     {
@@ -65,14 +64,14 @@ float f5quest(float a, float b, int r, int num)
 int main()
 {
     float a,b,d;
-    int r,num, num2;
+    int r, num, num2;
     num2 = 0;
     num = 0;
     
     cout << "выбор задания: 1(0 и 1 подзадания) 2 3 4 5" << endl;
     cin >> r;//ввод r определяет номер функции, которую вызовет программа
     
-    if (r == 0)//тут тупо перебор имеющихся значений. Так как это программа не для конечного пользователя, то системы защиты делать я не стал.
+    if (r == 0)//тут тупо перебор имеющихся значений.
     {
         cout << "нахождение площади прямоугольника" << endl << "введите а и b" << endl;
         cin >> a >> b;
@@ -90,7 +89,7 @@ int main()
     {
         cout << "нахождение длинны окружности" << endl << "введите диаметр окружности" << endl;
         cin >> d;
-        cout << "Длинна окр = " << f2quest(r,d) << endl;
+        cout << "Длинна окр = " << f2quest(d,r) << endl;
     }
     
     else if (r == 3)
