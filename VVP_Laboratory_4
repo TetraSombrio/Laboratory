@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-#define pi 3,14
-//кароче выбираем функцию, вводим данные, и оно считает
 
 int f1quest(int a, int b, int r)
 {
@@ -16,62 +14,69 @@ int f1quest(int a, int b, int r)
     }
 }
 
-int f2quest(int d, int r)
+float f2quest(float d, int r)
 {
+    float pi = 3.14;
     if (r == 2)
     {
-        return(pi * d);
+        return(d * pi);
     }
 }
 
-int f3quest(int a, int b, int r)
+float f3quest(float a, float b, int r)
 {
     if (r == 3)
     {
-        return((a+b)/2);
+        return((a + b) / 2);
     }
 }
 
-float f4quest(float a, float b, int r, int num2)
+float f4quest(float a, float b, int r, int num)
 {
-    if (a>0 and b>0 and r == 4)
+    if (a!=0 and b!=0 and r == 4)
     {
+        
+        a = pow(a, 2);
+        b = pow(b, 2);
         float res[4] = {};
-        res[0] = a+b;
-        res[1] = a-b;
-        res[2] = a*b;
-        res[3] = pow(a, 2)/pow(b, 2);
-        return(res[num2]);
+        res[0] = a + b;
+        res[1] = a - b;
+        res[2] = a * b;
+        res[3] = a / b;
+        return(res[num]);
     }
 }
 
-float f5quest(float a, float b, int r, int num)
+float f5quest(float a, float b, int r, int num2)
 {
     if (a!=0 and b!=0 and r == 5)
     {
+        a = abs(a);
+        b = abs(b);
         float res[4] = {};
-        res[0] = abs(a)+abs(b);
-        res[1] = abs(a)-abs(b);
-        res[2] = abs(a)*abs(b);
-        res[3] = abs(a)/abs(b);
-        return(res[num]);
+        res[0] = a + b;
+        res[1] = a - b;
+        res[2] = a * b;
+        res[3] = a / b;
+        return(res[num2]);
     }
     else{
         cout << "ошибка, вы ввели нулевые числа" << endl;
+        return 1;
     }
 }
 
 int main()
 {
     float a,b,d;
-    int r,num, num2;
+    int r, num, num2;
     num2 = 0;
     num = 0;
     
     cout << "выбор задания: 1(0 и 1 подзадания) 2 3 4 5" << endl;
     cin >> r;//ввод r определяет номер функции, которую вызовет программа
     
-    if (r == 0)//тут тупо перебор имеющихся значений. Так как это программа не для конечного пользователя, то системы защиты делать я не стал.
+    if (r == 0)//тут тупо перебор имеющихся значений.
     {
         cout << "нахождение площади прямоугольника" << endl << "введите а и b" << endl;
         cin >> a >> b;
@@ -89,7 +94,7 @@ int main()
     {
         cout << "нахождение длинны окружности" << endl << "введите диаметр окружности" << endl;
         cin >> d;
-        cout << "Длинна окр = " << f2quest(r,d) << endl;
+        cout << "Длинна окр = " << f2quest(d,r) << endl;
     }
     
     else if (r == 3)
@@ -101,18 +106,31 @@ int main()
     
     else if (r == 4)
     {
-        cout << "введите а,b укажите а после номер действия(+ - * ^)" << endl;
+        cout << "введите а,b укажите а после номер действия(+ - * /)" << endl;
         cin >> a >> b;
-        cin >> num2;
-        cout << "   " << f4quest(a, b, r, num2) << endl;
+        cin >> num;
+        if (num > 3)
+        {
+            return 0;
+        }
+        cout << "   " << f4quest(a, b, r, num) << endl;
     }
     
     else if (r == 5)
     {
         cout << "введите а,b, а после укажите номер действия(+ - * /)" << endl;
         cin >> a >> b;
-        cin >> num;
-        cout << "   " << f5quest(a, b, r, num) << endl;
+        cin >> num2;
+        if (num2 > 3)
+        {
+            return 0;
+        }
+        cout << "   " << f5quest(a, b, r, num2) << endl;
+    }
+    else
+    {
+        cout << "Вы ввели номер несуществующей функции" << endl;
+        return 2;
     }
     return 0;
 }
