@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-#define pi 3.14
+#define pi 3,14
 //кароче выбираем функцию, вводим данные, и оно считает
 //
 
@@ -17,7 +17,7 @@ int f1quest(int a, int b, int r)
     }
 }
 
-int f2quest(int &d, int r)
+int f2quest(int d, int r)
 {
     if (r == 2)
     {
@@ -68,19 +68,19 @@ int main()
     {
         cout << "нахождение площади прямоугольника" << endl << "введите а и b" << endl;
         cin >> a >> b;
-        cout << "S прямоуг = " << f1quest(a,b,r) << endl;
+        cout << "Площадь прямоугольника = " << f1quest(a,b,r) << endl;
     }
     if (r == 1)
     {
         cout << "нахождение периметра прямоугольника" << endl << "введите а и b" << endl;
         cin >> a >> b;
-        cout << "P прямоуг = " << f1quest(a,b,r) << endl;
+        cout << "Периметр прямоугольника = " << f1quest(a,b,r) << endl;
     }
     else if (r == 2)
     {
-        cout << "нахождение диаметра окружности" << endl << "введите диаметр окружности" << endl;
+        cout << "нахождение длинны окружности" << endl << "введите диаметр окружности" << endl;
         cin >> d;
-        cout << "D окр = " << f2quest(r,d) << endl;
+        cout << "Длинна окр = " << f2quest(r,d) << endl;
     }
     else if (r == 3)
     {
