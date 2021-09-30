@@ -1,9 +1,8 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-#define pi 3,14
+//#define 3,14
 //кароче выбираем функцию, вводим данные, и оно считает
-//
 
 int f1quest(int a, int b, int r)
 {
@@ -48,7 +47,7 @@ float f4quest(float a, float b, int r, int num2)
 
 float f5quest(float a, float b, int r, int num)
 {
-    if (a>0 and b>0 and r == 5)
+    if (a!=0 and b!=0 and r == 5)
     {
         float res[4] = {};
         res[0] = abs(a)+abs(b);
@@ -57,50 +56,64 @@ float f5quest(float a, float b, int r, int num)
         res[3] = abs(a)/abs(b);
         return(res[num]);
     }
+    else{
+        cout << "ошибка, вы ввели нулевые числа" << endl;
+    }
 }
+
 int main()
 {
+    const int pi=3.14
     float a,b,d;
     int r,num, num2;
+    num2 = 0;
+    num = 0;
+    
     cout << "выбор задания: 1(0 и 1 подзадания) 2 3 4 5" << endl;
     cin >> r;//ввод r определяет номер функции, которую вызовет программа
+    
     if (r == 0)//тут тупо перебор имеющихся значений. Так как это программа не для конечного пользователя, то системы защиты делать я не стал.
     {
         cout << "нахождение площади прямоугольника" << endl << "введите а и b" << endl;
         cin >> a >> b;
         cout << "Площадь прямоугольника = " << f1quest(a,b,r) << endl;
     }
+    
     if (r == 1)
     {
         cout << "нахождение периметра прямоугольника" << endl << "введите а и b" << endl;
         cin >> a >> b;
         cout << "Периметр прямоугольника = " << f1quest(a,b,r) << endl;
     }
+    
     else if (r == 2)
     {
         cout << "нахождение длинны окружности" << endl << "введите диаметр окружности" << endl;
         cin >> d;
         cout << "Длинна окр = " << f2quest(r,d) << endl;
     }
+    
     else if (r == 3)
     {
         cout << "нахождение ср.арифм" << endl << "введите а и b" << endl;
         cin >> a >> b;
         cout << "ср.арифм = " << f3quest(a,b,r) << endl;
     }
+    
     else if (r == 4)
     {
         cout << "введите а,b укажите а после номер действия(+ - * ^)" << endl;
         cin >> a >> b;
         cin >> num2;
-        cout << "=" << f4quest(a, b, r, num2) << endl;
+        cout << "   " << f4quest(a, b, r, num2) << endl;
     }
+    
     else if (r == 5)
     {
         cout << "введите а,b, а после укажите номер действия(+ - * /)" << endl;
         cin >> a >> b;
         cin >> num;
-        cout << "=" << f5quest(a, b, r, num) << endl;
+        cout << "   " << f5quest(a, b, r, num) << endl;
     }
     return 0;
 }
