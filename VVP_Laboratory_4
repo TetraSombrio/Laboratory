@@ -75,6 +75,7 @@ int main()
         cout << "введите а и b" << endl;
         cin >> a >> b;
         cout << "P прямоуг = " << f1quest(a,b,r) << endl;
+    }
     else if (r == 2)
     {
         cout << "введите диаметр окружности" << endl;
