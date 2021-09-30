@@ -90,14 +90,14 @@ int main()
     }
     else if (r == 4)
     {
-        cout << "введите а,b укажите номер действия(+ - * ^)" << endl;
+        cout << "введите а,b укажите а после номер действия(+ - * ^)" << endl;
         cin >> a >> b;
         cin >> num2;
         cout << "=" << f4quest(a, b, r, num2) << endl;
     }
     else if (r == 5)
     {
-        cout << "введите а,b, укажите номер действия(+ - * /)" << endl;
+        cout << "введите а,b, а после укажите номер действия(+ - * /)" << endl;
         cin >> a >> b;
         cin >> num;
         cout << "=" << f5quest(a, b, r, num) << endl;
