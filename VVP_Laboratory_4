@@ -37,9 +37,9 @@ float f4quest(float a, float b, int r, int num2)
     if (a>0 and b>0 and r == 4)
     {
         float res[4] = {};
-        res[0] = a+b;
-        res[1] = a-b;
-        res[2] = a*b;
+        res[0] = pow(a, 2)+pow(b, 2);
+        res[1] = pow(a, 2)-pow(b, 2);
+        res[2] = pow(a, 2)*pow(b, 2);
         res[3] = pow(a, 2)/pow(b, 2);
         return(res[num2]);
     }
