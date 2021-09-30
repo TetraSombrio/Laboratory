@@ -31,7 +31,7 @@ float f3quest(float a, float b, int r)
     }
 }
 
-float f4quest(float a, float b, int r, int num2)
+float f4quest(float a, float b, int r, int num)
 {
     if (a!=0 and b!=0 and r == 4)
     {
@@ -44,7 +44,7 @@ float f4quest(float a, float b, int r, int num2)
     }
 }
 
-float f5quest(float a, float b, int r, int num)
+float f5quest(float a, float b, int r, int num2)
 {
     if (a!=0 and b!=0 and r == 5)
     {
@@ -103,16 +103,16 @@ int main()
     {
         cout << "введите а,b укажите а после номер действия(+ - * ^)" << endl;
         cin >> a >> b;
-        cin >> num2;
-        cout << "   " << f4quest(a, b, r, num2) << endl;
+        cin >> num;
+        cout << "   " << f4quest(a, b, r, num) << endl;
     }
     
     else if (r == 5)
     {
         cout << "введите а,b, а после укажите номер действия(+ - * /)" << endl;
         cin >> a >> b;
-        cin >> num;
-        cout << "   " << f5quest(a, b, r, num) << endl;
+        cin >> num2;
+        cout << "   " << f5quest(a, b, r, num2) << endl;
     }
     return 0;
 }
