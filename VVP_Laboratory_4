@@ -30,8 +30,8 @@ float f3quest(float a, float b, int r)
         return((a+b)/2);
     }
 }
-//Замени num на float, Балдур
-float f4quest(float a, float b, int r, int num)
+
+float f4quest(float a, float b, int r, float num)
 {
     if (a!=0 and b!=0 and r == 4)
     {
@@ -44,7 +44,7 @@ float f4quest(float a, float b, int r, int num)
     }
 }
 
-float f5quest(float a, float b, float r, int num2)
+float f5quest(float a, float b, float r, float num2)
 {
     if (a!=0 and b!=0 and r == 5)
     {
