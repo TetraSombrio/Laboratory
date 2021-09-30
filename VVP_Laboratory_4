@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-//#define 3,14
+#define pi 3,14
 //кароче выбираем функцию, вводим данные, и оно считает
 
 int f1quest(int a, int b, int r)
@@ -63,7 +63,6 @@ float f5quest(float a, float b, int r, int num)
 
 int main()
 {
-    const int pi=3.14
     float a,b,d;
     int r,num, num2;
     num2 = 0;
