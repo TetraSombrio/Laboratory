@@ -79,27 +79,27 @@ int main()
     {
         cout << "введите диаметр окружности" << endl;
         cin >> d;
-        cout << f2quest(r,d) << endl;
+        cout << "D окр = " << f2quest(r,d) << endl;
     }
     else if (r == 3)
     {
         cout << "введите а и b" << endl;
         cin >> a >> b;
-        cout << f3quest(a,b,r) << endl;
+        cout << "ср.арифм = " << f3quest(a,b,r) << endl;
     }
     else if (r == 4)
     {
         cout << "введите а,b укажите номер действия(+ - * ^)" << endl;
         cin >> a >> b;
         cin >> num2;
-        cout << f4quest(a, b, r, num2) << endl;
+        cout << "=" << f4quest(a, b, r, num2) << endl;
     }
     else if (r == 5)
     {
         cout << "введите а,b, укажите номер действия(+ - * /)" << endl;
         cin >> a >> b;
         cin >> num;
-        cout << f5quest(a, b, r, num) << endl;
+        cout << "=" << f5quest(a, b, r, num) << endl;
     }
     return 0;
 }
