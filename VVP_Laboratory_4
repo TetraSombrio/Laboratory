@@ -50,8 +50,8 @@ float f5quest(float a, float b, int r, int num)
     if (a!=0 and b!=0 and r == 5)
     {
         float res[4] = {};
-        res[0] = abs(a)+abs(b);
-        res[1] = abs(a)-abs(b);
+        res[0] = (a)+(b);
+        res[1] = (a)-(b);
         res[2] = abs(a)*abs(b);
         res[3] = abs(a)/abs(b);
         return(res[num]);
