@@ -101,7 +101,7 @@ int main()
     
     else if (r == 4)
     {
-        cout << "введите а,b укажите а после номер действия(+ - * ^)" << endl;
+        cout << "введите а,b укажите а после номер действия(+ - * /)" << endl;
         cin >> a >> b;
         cin >> num;
         cout << "   " << f4quest(a, b, r, num) << endl;
