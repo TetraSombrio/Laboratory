@@ -34,7 +34,7 @@ int f3quest(int a, int b, int r)
 
 float f4quest(float a, float b, int r, int num2)
 {
-    if (a>0 and b>0 and r == 4)
+    if (a!=0 and b!=0 and r == 4)
     {
         float res[4] = {};
         res[0] = pow(a, 2)+pow(b, 2);
