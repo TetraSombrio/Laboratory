@@ -40,11 +40,11 @@ float f4quest(float a, float b, int r, int num)
         res[1] = pow(a, 2)-pow(b, 2);
         res[2] = pow(a, 2)*pow(b, 2);
         res[3] = pow(a, 2)/pow(b, 2);
-        return(res[num2]);
+        return(res[num]);
     }
 }
 
-float f5quest(float a, float b, int r, int num2)
+float f5quest(float a, float b, float r, int num2)
 {
     if (a!=0 and b!=0 and r == 5)
     {
@@ -53,7 +53,7 @@ float f5quest(float a, float b, int r, int num2)
         res[1] = (a)-(b);
         res[2] = abs(a)*abs(b);
         res[3] = abs(a)/abs(b);
-        return(res[num]);
+        return(res[num2]);
     }
     else{
         cout << "ошибка, вы ввели нулевые числа" << endl;
