@@ -58,6 +58,7 @@ float f5quest(float a, float b, int r, int num)
     }
     else{
         cout << "ошибка, вы ввели нулевые числа" << endl;
+        return 0;
     }
 }
 
