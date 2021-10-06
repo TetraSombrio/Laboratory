@@ -6,7 +6,9 @@ int main()
 {
 	cout << "введи a, b, c  переменные" << endl;
 	int a,b,c;
+	float r;
 	cin >> a >> b >> c;
-	float r = 2*a+4*b/pow(static_cast<float>(c),2);
+	r = 2*a+4*b/pow(static_cast<float>(c),2);
+	double k(r);
 	cout << "2a+4b/c^2 = " << r;
 }
