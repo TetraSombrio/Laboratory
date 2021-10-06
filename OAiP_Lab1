@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -6,6 +7,6 @@ int main()
 	cout << "введи a, b, c  переменные" << endl;
 	int a,b,c;
 	cin >> a >> b >> c;
-	float r = 2*a+4*b/static_cast<float>(c);
-	cout << "2a+4b/c = " << r;
+	float r = 2*a+4*b/pow(static_cast<float>(c),2);
+	cout << "2a+4b/c^2 = " << r;
 }
