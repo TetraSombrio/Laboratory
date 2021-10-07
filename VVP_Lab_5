@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int q1(float x1, float x2, float y1, float y2)
+{
+    //float x1,x2,y1,y2,r;
+    r = sqrt(pow((x2 - x1),2) + pow((y2 - y1),2));
+    return r;
+}
+
+int q2(float x1, float x2, float x3, float y1, float y2, float y3)
+{
+    
+    r = sqrt(pow((x2 - x1),2) + pow((y2 - y1),2));
+}
+
+int main()
+{
+    int selector;
+    switch(selector)
+    {
+    case 1:
+        cout << "Последовательно введите координаты точек" << endl;
+        cin >> x1 >> y1 >> x2 >> y2;
+        cout << q1() << endl;
+    case 2:
+        cout << "Последовательно введите координаты точек" << endl;
+        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+        cout << q2() << endl;
+    case 3:
+        cout << "Последовательно введите координаты точек" << endl;
+        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+        cout << q3() << endl;
+    case 4:
+        cout << "Последовательно введите координаты вершин" << endl;
+        cin >> x1 >> y1 >> x2 >> y2;
+        cout << q4() << endl;
+    case 5:
+        cout << "Последовательно введите координаты вершин" << endl;
+        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+        cout << q5() << endl;
+    }
+}
