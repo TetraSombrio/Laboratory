@@ -6,20 +6,20 @@ int a,b,c;
 
 int thefirst(int a, int b, int c)
 {
-	int di;
-	di = (b^2)-4*a*c;
-	return di;
+	int di;//обьявляем переменную для результата
+	di = (b^2)-4*a*c;//считаем в переменную
+	return di;//выводим в значение функции
 }
 
 int thesecond(int a, int b, int c)
 {
     int r;
     r = a*8-b+2*c;
-    if(r>=0){
+    if(r>=0){//проверяем равенство
         cout << r << endl;
         return r;
     }
-    else {
+    else {//если меньше, то выводим ошибку
         cout << "err";
         return 1;
     }
@@ -29,7 +29,7 @@ int thethird(int a, int b)
 {
     int r;
     r = pow(a,2) - 16 + b * 2;
-    while (r != 2 * b)
+    while (r != 2 * b)//запускаем подбор значений для r.
     {
         a++;
         b++;
@@ -40,8 +40,8 @@ int thethird(int a, int b)
 int main()
 {
     cout << "введите переменные" << endl;
-    cin >> a >> b >> c;
-    cout << thefirst(a,b,c) << endl;
+    cin >> a >> b >> c;//вводим значения для переменных для всех функций разом
+    cout << thefirst(a,b,c) << endl;//получаем значение каждой из функций.
     cout << thesecond(a,b,c) << endl;
     cout << thethird(a,b) << endl;
     return 0;
