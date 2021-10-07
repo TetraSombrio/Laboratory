@@ -31,17 +31,9 @@ int thethird(int a, int b)
     r = pow(a,2) - 16 + b * 2;
     while (r != 2 * b)
     {
-        if((a and b) > 2)
-        {
-            a++;
-            b++;
-        }
-        else
-        {
-            a--;
-            b--;
-        }
-    return r;
+        a++;
+        b++;
+        return r;
     }
 }
 
