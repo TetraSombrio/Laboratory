@@ -4,25 +4,20 @@ using namespace std;
 
 int a,b,c;
 
-int thefirst(a,b,c)
+int thefirst(int a, int b, int c)
 {
 	int di;
-	cout << "введите а,б,с переменные" << endl;
-	cin >> a >> b >> c;
 	di = (b^2)-4*a*c;
-	cout << di;
-	return 0;
+	return di;
 }
 
-int thesecond(a,b,c)
+int thesecond(int a, int b, int c)
 {
     int r;
-    cout << "введите переменные" << endl;
-    cin >> a >> b >> c;
     r = a*8-b+2*c;
     if(r>=0){
         cout << r << endl;
-        return 0;
+        return r;
     }
     else {
         cout << "err";
@@ -30,11 +25,32 @@ int thesecond(a,b,c)
     }
 }
 
+int thethird(int a, int b)
+{
+    int r;
+    r = pow(a,2) - 16 + b * 2;
+    while (r != 2 * b)
+    {
+        if((a and b) > 2)
+        {
+            a++;
+            b++;
+        }
+        else
+        {
+            a--;
+            b--;
+        }
+    return r;
+    }
+}
 
 int main()
 {
+    cout << "введите переменные" << endl;
     cin >> a >> b >> c;
     cout << thefirst(a,b,c) << endl;
     cout << thesecond(a,b,c) << endl;
+    cout << thethird(a,b) << endl;
     return 0;
 }
