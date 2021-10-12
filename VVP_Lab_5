@@ -15,6 +15,14 @@ void q2(float x1, float x2, float x3, float y1, float y2, float y3)
     cout << sqrt(pow((x3 - x2),2) + pow((y3 - y2),2)) << endl;
 }
 
+void q3(float x1, float x2, float x3)
+{
+    if (!((x3 - x2) > 0) and ((x2 - x1) > 0)
+    {
+        cout << "Гуманитарий, сказали же, 2 точка между 1 и 3." << endl;
+    }
+}
+
 void q4(float x1, float x2, float y1, float y2)
 {
     float le1,le2;
@@ -24,6 +32,11 @@ void q4(float x1, float x2, float y1, float y2)
     cout << le1 * 2 + le2 * 2 << le1 * le2 << endl;
 }
 
+void q5(float x1, float x2, float x3, float y1, float y2, float y3)
+{
+    
+}
+
 int main()
 {
     int selector;
@@ -31,18 +44,19 @@ int main()
     cout << "выберите задание введя его номер: 1, 2, 3, 4, 5" << endl;
     cin >> selector;
     cout << "\n" << endl;
-    if (selector == (1 or 3 or 4))
+    if (selector == (1 or 4 or 5))
     {
         cout << "последовательно введите все переменные, сначала x, потом y" << endl;
         cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
     }
-    else if (selector == (2 or 5))
+    else if (selector == 2)
     {
         cin >> x1 >> y1 >> x2 >> y2;
     }
-    else
+    else if (selector == 3)
     {
-        return 1;
+        cout << "Введите точку A, B, C, так, что бы точка C была МЕЖДУ A и B" << endl;
+        cin >> x1 >> x3 >> x2;
     }
     switch(selector)
     {
@@ -56,7 +70,7 @@ int main()
         break;
     case 3:
         //вывести произведение длин отрезков
-        //q1(x1,x2,x3,y1,y2,y3,r)
+        q3(x1,x2,x3);
         break;
     case 4:
         //вывести периметр и площадь прямоугольника(+)
