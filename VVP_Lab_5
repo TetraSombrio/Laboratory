@@ -54,12 +54,12 @@ int main()
     cout << "выберите задание введя его номер: 1, 2, 3, 4, 5" << endl;
     cin >> selector;
     cout << "\n" << endl;
-    if (selector == (1 or 4 or 5))
+    if (selector == (4 or 5))
     {
         cout << "последовательно введите все переменные, сначала x, потом y для каждой точки." << endl;
         cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
     }
-    else if (selector == 2)
+    else if (selector == 1 or 2)
     {
         cout << "последовательно введите координаты точек, сначала x, потом y для каждой точки." << endl;
         cin >> x1 >> y1 >> x2 >> y2;
@@ -69,6 +69,7 @@ int main()
         cout << "Введите точку A, B, C, так, что бы точка C была МЕЖДУ A и B" << endl;
         cin >> x1 >> x3 >> x2;
     }
+    
     switch(selector)
     {
     case 1:
