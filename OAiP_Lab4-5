@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int *arr;//указатель для чистки памяти
+    int sz;//размер массива
+    cout << "n = ";
+    cin >> sz;//вводим размер массива
+    if(sz <= 0)//проверяем размер массива что бы он был положительным
+    {
+        cout <<"invalid size" << endl;
+        return 1;
+    }
+    arr = new int[sz];
+    for(int i = 0; i < sz; i++)//последовательно вводим числа в массив
+    {
+        cout << "arr[" << i << "]";
+        cin >> arr[i];
+    }
+    int tmp, i;
+    while(i < (sz - 1))//сама сортировка
+    {
+        i++;
+        for(int j = 0; j < sz - i - 1; j++)
+        {
+            if(arr[j] > arr[j + 1])
+            {
+                tmp = arr[j];//самодельная функция swap
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+        }
+    }
+    
+    for(int i = 0; i < sz; i++)//выводим числа из массива
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    
+    delete []arr;//чистим память
+    
+    return 0;
+}
