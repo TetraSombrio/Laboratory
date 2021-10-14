@@ -10,22 +10,29 @@ void q1(float x1, float x2, float y1, float y2)
 void q2(float x1, float x2, float x3)
 {
     float ac,bc;
-    ac = abs(x2 - x1);
-    bc = abs(x3 - x2);
+    ac = (x2 - x1);
+    bc = (x3 - x2);
+    ac = abs(ac);
+    bc = abs(bc);
     cout << "отрезок ас = " << ac << "\nотрезок bc = " << bc << endl;
     cout << "ac + bc = " << ac + bc << endl;
 }
 
-void q3(float x1, float x2, float x3)// ACB точки. Именно в таком порядке.
+void q3(float a, float b, float c)// ABC точки. Именно в таком порядке.
 {
-    if (((x3 - x2) <= 0) and ((x2 - x1) <= 0))
-    {
-        cout << "Гуманитарий, сказали же, 2 точка между 1 и 3." << endl;
-    }
     float ac,bc;
-    ac = abs(x2 - x1);
-    bc = abs(x3 - x2);
-    cout << "ac * bc = " << ac * bc << endl;
+    if (((c > b) and (c < a)) or ((c > a) and (c < b)))
+    {
+        ac = abs(c - a);
+        bc = abs(c - b);
+        cout << "ac * bc = " << ac * bc << endl;
+    }
+    else
+    {
+        cout << "Гуманитарий, сказали же, C точка между A и B." << endl;
+        return;
+    }
+    
 }
 
 void q4(float x1, float x2, float y1, float y2)
@@ -54,42 +61,37 @@ int main()
     cout << "выберите задание введя его номер: 1, 2, 3, 4, 5" << endl;
     cin >> selector;
     cout << "\n" << endl;
-    if (selector == (4 or 5))
-    {
-        cout << "последовательно введите все переменные, сначала x, потом y для каждой точки." << endl;
-        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
-    }
-    else if (selector == 1 or 2)
-    {
-        cout << "последовательно введите координаты точек, сначала x, потом y для каждой точки." << endl;
-        cin >> x1 >> y1 >> x2 >> y2;
-    }
-    else if (selector == 3)
-    {
-        cout << "Введите точку A, B, C, так, что бы точка C была МЕЖДУ A и B" << endl;
-        cin >> x1 >> x3 >> x2;
-    }
     
     switch(selector)
     {
     case 1:
         //вывести расстояние между точками
+        cout << "последовательно введите координаты точек, сначала x, потом y для каждой точки." << endl;
+        cin >> x1 >> y1 >> x2 >> y2;
         q1(x1,x2,y1,y2);
         break;
     case 2:
         //вывести длинны и сумму отрезков
+        cout << "последовательно введите координаты трех точек" << endl;
+        cin >> x1 >> y1 >> x2 >> y2;
         q2(x1,x2,x3);
         break;
     case 3:
         //вывести произведение длин отрезков
+        cout << "Введите точку A, B, C, так, что бы точка C была МЕЖДУ A и B" << endl;
+        cin >> x1 >> x2 >> x3;
         q3(x1,x2,x3);
         break;
     case 4:
         //вывести периметр и площадь прямоугольника
+        cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
+        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
         q4(x1,x2,y1,y2);
         break;
     case 5:
         //вывести периметр и площадь треугольника
+        cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
+        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
         q5(x1,x2,x3,y1,y2,y3);
         break;
     }
