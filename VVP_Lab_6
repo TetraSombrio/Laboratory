@@ -1,0 +1,75 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void q1(a,b)
+{
+    swap(a,b)
+    cout << a << b << endl;
+}
+
+void q2(a,b,c)
+{
+    int tmp;
+    tmp = b;
+    b = a;
+    tmp2 = c;
+    c = tmp;
+    tmp = a;
+    a = tmp2;
+    
+    cout << a << b << c << endl;
+}
+
+void q3(a,b,c)
+{
+    int tmp;
+    tmp = c;
+    c = a;
+    tmp2 = b;
+    b = tmp;
+    tmp = a;
+    b = tmp2;
+    
+    cout << a << b << c << endl;
+}
+
+int main()
+{
+    int = selector;
+    cin >> selector;
+    switch(selector)
+    {
+    switch(selector)
+    {
+    case 1:
+        //поменять местами а и б
+        cout << "Введите A, B" << endl;
+        cin >> a >> b;
+        q1(a,b);
+        break;
+    case 2:
+        //вывести abc как cab
+        cout << "Введите A, B, C" << endl;
+        cin >> a >> b >> c;
+        q2(a,b,c);
+        break;
+    case 3:
+        //вывести abc как bca
+        cout << "Введите A, B, C" << endl;
+        cin >> a >> b >> c;
+        q3(a,b,c);
+        break;
+    case 4:
+        //вывести периметр и площадь прямоугольника
+        //cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
+        //cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+        //q4(x1,x2,y1,y2);
+        break;
+    case 5:
+        //вывести периметр и площадь треугольника
+        //cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
+        //cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+        //q5(x1,x2,x3,y1,y2,y3);
+        break;
+    }
