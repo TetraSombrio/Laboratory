@@ -10,7 +10,7 @@ void q1(float x1, float x2, float y1, float y2)
 void q2(float x1, float x2, float x3)
 {
     float ac,bc;
-    ac = (x2 - x1);
+    ac = (x3 - x1);
     bc = (x3 - x2);
     ac = abs(ac);
     bc = abs(bc);
@@ -35,29 +35,35 @@ void q3(float a, float b, float c)// ABC точки. Именно в таком 
     
 }
 
-void q4(float x1, float x2, float y1, float y2)
+void q4(float x1, float y1, float x2, float y2)
 {
-    float le1,le2;
-    le1 = x2 - x1;
-    le2 = y2 - y1;
+    float side1,side2;
+    side1 = abs(x2 - x1);
+    side2 = abs(y2 - y1);
     
-    cout << "периметр прямоугольника = " << le1 * 2 + le2 * 2 << "площадь прямоугольника = " << le1 * le2 << endl;
+    cout << "периметр прямоугольника = " << side1 * 2 + side2 * 2 << "\nплощадь прямоугольника = " << side1 * side2 << endl;
 }
 
-void q5(float x1, float x2, float x3, float y1, float y2, float y3)
+void q5(float x1, float y1, float x2, float y2, float x3, float y3)// error in mathlogic
 {
     float a, b, c, p;
     a = sqrt((x1 * x1) + (y1 * y1));//отдельно считает длину вектора
     b = sqrt((x2 * x2) + (y2 * y2));
     c = sqrt((x3 * x3) + (y3 * y3));
+    
+    cout <<"А, B, C = " << a << endl << b << endl << c << endl;
+    
     p = (a + b + c) / 2;//костыль для формулы Герона
+    
+    cout << "\nП = " << p << endl;
+    
     cout << sqrt(p * ((p - a) * (p - b) * (p - c))) << endl;//сама формула Герона
 }
 
 int main()
 {
     int selector;
-    float x1,x2,x3,y1,y2,y3;
+    float x1,y1,x2,y2,x3,y3;
     cout << "выберите задание введя его номер: 1, 2, 3, 4, 5" << endl;
     cin >> selector;
     cout << "\n" << endl;
@@ -66,9 +72,9 @@ int main()
     {
     case 1:
         //вывести расстояние между точками
-        cout << "последовательно введите координаты точек, сначала x, потом y для каждой точки." << endl;
-        cin >> x1 >> x2 >> y1 >> y2;
-        q1(x1,x2,y1,y2);
+        cout << "последовательно введите координаты двух точек, сначала x, потом y для каждой точки." << endl;
+        cin >> x1 >> y1 >> x2 >> y2;
+        q1(x1,y1,x2,y2);
         break;
     case 2:
         //вывести длинны и сумму отрезков
@@ -78,21 +84,21 @@ int main()
         break;
     case 3:
         //вывести произведение длин отрезков
-        cout << "Введите точку A, B, C, так, что бы точка C была МЕЖДУ A и B" << endl;
+        cout << "Введите точки A, B, C, так, что бы точка C была МЕЖДУ A и B" << endl;
         cin >> x1 >> x2 >> x3;
         q3(x1,x2,x3);
         break;
     case 4:
         //вывести периметр и площадь прямоугольника
         cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
-        cin >> x1 >> x2 >> y1 >> y2;
-        q4(x1,x2,y1,y2);
+        cin >> x1 >> y1 >> x2 >> y2;
+        q4(x1,y1,x2,y2);
         break;
     case 5:
         //вывести периметр и площадь треугольника
         cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
-        cin >> x1 >> x2 >> x3 >> y1 >> y2 >> y3;
-        q5(x1,x2,x3,y1,y2,y3);
+        cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+        q5(x1,y1,x2,y2,x3,y3);
         break;
     }
 }
