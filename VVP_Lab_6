@@ -38,8 +38,7 @@ int main()
 {
     int = selector;
     cin >> selector;
-    switch(selector)
-    {
+    
     switch(selector)
     {
     case 1:
