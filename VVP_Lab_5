@@ -44,7 +44,7 @@ void q4(float x1, float y1, float x2, float y2)
     cout << "периметр прямоугольника = " << side1 * 2 + side2 * 2 << "\nплощадь прямоугольника = " << side1 * side2 << endl;
 }
 
-void q5(float x1, float y1, float x2, float y2, float x3, float y3)// error in mathlogic
+void q5(float x1, float y1, float x2, float y2, float x3, float y3)//
 {
     float a, b, c, p;
     a = sqrt((x1 * x1) + (y1 * y1));//отдельно считает длину вектора
@@ -57,7 +57,7 @@ void q5(float x1, float y1, float x2, float y2, float x3, float y3)// error in m
     
     cout << "\nП = " << p << endl;
     
-    cout << sqrt(p * ((p - a) * (p - b) * (p - c))) << endl;//сама формула Герона
+    cout << sqrt(p * ((p - a) * (p - b) * (p - c))) << endl;//сама формула Герона error here
 }
 
 int main()
