@@ -10,6 +10,8 @@ void q1(a,b)
 
 void q2(a,b,c)
 {
+    cout << a << b << c << endl;
+    cout << "converted to:" << endl;
     int tmp;
     tmp = b;
     b = a;
@@ -23,6 +25,8 @@ void q2(a,b,c)
 
 void q3(a,b,c)
 {
+    cout << a << b << c << endl;
+    cout << "converted to:" << endl;
     int tmp;
     tmp = c;
     c = a;
