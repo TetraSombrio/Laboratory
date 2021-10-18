@@ -2,46 +2,75 @@
 #include <cmath>
 using namespace std;
 
-void q1(a,b)
+void q1(float a, float b)
 {
-    swap(a,b)
+    swap(a,b);
     cout << a << b << endl;
 }
 
-void q2(a,b,c)
+void q2(float a,float b,float c)
 {
     cout << a << b << c << endl;
     cout << "converted to:" << endl;
     int tmp;
-    tmp = b;
-    b = a;
-    tmp2 = c;
-    c = tmp;
     tmp = a;
-    a = tmp2;
+    a = c;
+    //b = b; а по сему ничего не пишем
+    c = tmp;
     
     cout << a << b << c << endl;
 }
 
-void q3(a,b,c)
+void q3(float a,float b,float c)
 {
     cout << a << b << c << endl;
-    cout << "converted to:" << endl;
-    int tmp;
-    tmp = c;
-    c = a;
-    tmp2 = b;
-    b = tmp;
-    tmp = a;
+    cout << "converted to: ";
+    int tmp,tmp2;
+    tmp = b;
+    tmp2 = a;
+    //abc = cab. 123 = 312
+    a = c;
     b = tmp2;
+    c = tmp;
     
     cout << a << b << c << endl;
+}
+
+void q4(float x)
+{
+    cout << "y = 3(x^6) − 6(x^2) − 7" << endl;
+    cout << "y = " << 3 * (pow(x,6)) - 6 * (x * x) - 2 << endl;
+}
+
+void q5(float x)
+{
+    cout << "y = 4(x−3)^6 − 7(x−3)^3 + 2" << endl;
+    cout << "y = " << 4 * (pow(x-3,6)) - 7 * (pow(x-3,3)) + 2 << endl;
+}
+
+void q6(double A)
+{
+    float tmpA = A * A;
+    A = tmpA * tmpA * tmpA * tmpA;
+    cout << "A^8 = " << A << endl;
+}
+
+void q7(double A)
+{
+    float tmpA2;
+    float tmpA = A * A;
+    tmpA2 = tmpA * tmpA;
+    A = tmpA2 * tmpA2 * tmpA2 * A * A * A;
+    cout << "A^15 = " << A << endl;
 }
 
 int main()
 {
-    int = selector;
+    int selector;
+    cout << "Выберите номер задания от 1 до 7\t";
     cin >> selector;
+    float a,b,c,x;
+    double A;
     
     switch(selector)
     {
@@ -64,15 +93,28 @@ int main()
         q3(a,b,c);
         break;
     case 4:
-        //вывести периметр и площадь прямоугольника
-        //cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
-        //cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
-        //q4(x1,x2,y1,y2);
+        //Найти значение функции y = 3x6 − 6x2 − 7 при данном значении x
+        cout << "введите x" << endl;
+        cin >> x;
+        q4(x);
         break;
     case 5:
-        //вывести периметр и площадь треугольника
-        //cout << "последовательно введите все переменные, сначала x, потом y для каждой вершины." << endl;
-        //cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
-        //q5(x1,x2,x3,y1,y2,y3);
+        //Найти значение функции y = 4(x−3)6 − 7(x−3)3 + 2 при данном значении x
+        cout << "введите x" << endl;
+        cin >> x;
+        q5(x);
+        break;
+    case 6:
+        //Дано число A. Вычислить A8 , используя вспомогательную переменную и три операции умножения.
+        cout << "введите A" << endl;
+        cin >> A;
+        q6(A);
+        break;
+    case 7:
+        //Дано число A. Вычислить A15, используя две вспомогательные переменные и пять операций умножения.
+        cout << "введите A" << endl;
+        cin >> A;
+        q7(A);
         break;
     }
+}
