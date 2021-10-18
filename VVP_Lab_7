@@ -19,14 +19,22 @@ void q3(float x, float a, float y)
     cout << r*y << endl;
 }
 
-void q4()
+void q4(float v1, float v2, float s, float t)
 {
-    
+    float v, s2;
+    v = v1+v2;
+    s2 = v*t;
+    s += s2;
+    cout << s <<endl;
 }
 
-void q5()
+void q5(a,b)
 {
-    
+    while(a*x+b != 0)
+    {
+        x++;
+    }
+    cout << "a*x+b = 0 при x = " << x << endl;
 }
 
 void q6()
@@ -39,7 +47,7 @@ int main()
     int selector;
     cout << "Выберите номер задания от 1 до 7\t";
     cin >> selector;
-    float a;
+    float a,x,y,v1,v2,s,t;
     
     switch(selector)
     {
@@ -73,16 +81,16 @@ int main()
         /*Скорость первого автомобиля V1 км/ч, второго — V2 км/ч, 
         расстояние между ними S км. Определить расстояние между 
         ними через T часов, если автомобили удаляются друг от друга.*/ 
-        //cout << "введите x" << endl;
-        //cin >> x;
-        q4();
+        cout << "введите v1, v1, S и T" << endl;
+        cin >> v1 >> v2 >> s >> t;
+        q4(v1, v2, s, t);
         break;
     case 5:
         /*Решить линейное уравнение A·x + B = 0, заданное своими коэффициентами 
         A и B (коэффициент A не равен 0).*/
-        //cout << "введите x" << endl;
-        //cin >> x;
-        q5();
+        cout << "введите a,b" << endl;
+        cin >> a >> b;
+        q5(a,b);
         break;
     case 6:
         /*Найти решение системы линейных уравнений вида 
