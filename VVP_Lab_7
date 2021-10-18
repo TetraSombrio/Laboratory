@@ -28,11 +28,21 @@ void q4(float v1, float v2, float s, float t)
     cout << s <<endl;
 }
 
-void q5(a,b)
+void q5(float a,float b)
 {
-    while(a*x+b != 0)
+    float x = 1;
+    
+    while(a * x != -b)
     {
-        x++;
+        if(a * x > b)
+        {
+            x--;
+        }
+        else if (a * x < b)
+        {
+            x++;
+        }
+        cout << a * x + b << endl;
     }
     cout << "a*x+b = 0 при x = " << x << endl;
 }
@@ -47,7 +57,7 @@ int main()
     int selector;
     cout << "Выберите номер задания от 1 до 7\t";
     cin >> selector;
-    float a,x,y,v1,v2,s,t;
+    float a,b,x,y,v1,v2,s,t;
     
     switch(selector)
     {
@@ -90,7 +100,10 @@ int main()
         A и B (коэффициент A не равен 0).*/
         cout << "введите a,b" << endl;
         cin >> a >> b;
-        q5(a,b);
+        if(a!=0)
+        {
+            q5(a,b);
+        }
         break;
     case 6:
         /*Найти решение системы линейных уравнений вида 
@@ -98,7 +111,7 @@ int main()
         A2·x + B2·y = C2*/
         //cout << "введите A" << endl;
         //cin >> A;
-        q6();
+        //q6();
         break;
     }
 }
