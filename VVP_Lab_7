@@ -12,9 +12,11 @@ void q2(float a)
     cout << a * 57.295779 << "°" << endl;
 }
 
-void q3(float x, float a)
+void q3(float x, float a, float y)
 {
-    
+    float r;
+    r = a/x;
+    cout << r*y << endl;
 }
 
 void q4()
@@ -63,9 +65,9 @@ int main()
         break;
     case 3:
         //Известно, что X кг конфет стоит A рублей. Определить, сколько стоит 1 кг и Y кг этих же конфет
-        cout << "Введите КГ конфет и их цену" << endl;
-        cin >> x >> A;
-        q3(x,A);
+        cout << "Введите КГ(X) конфет и их цену(A) и Y кг этих конфет" << endl;
+        cin >> x >> a >> y;
+        q3(x,a,y);
         break;
     case 4:
         /*Скорость первого автомобиля V1 км/ч, второго — V2 км/ч, 
