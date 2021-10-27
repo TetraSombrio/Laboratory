@@ -23,7 +23,7 @@ int main()
     while(i < (sz - 1))//сама сортировка
     {
         i++;
-        for(int j = 0; j < sz - i - 1; j++)
+        for(int j = 0; j < sz - 1; j++)
         {
             if(arr[j] > arr[j + 1])
             {
