@@ -2,24 +2,24 @@
 #include <cmath>
 using namespace std;
 
-void q1(float a)
+void q1(float a)//l? pg- chist+
 {
     cout << a / 57.295779 << "рад" << endl;
 }
 
-void q2(float a)
+void q2(float a)//l? pg- chist+
 {
     cout << a * 57.295779 << "°" << endl;
 }
 
-void q3(float x, float a, float y)
+void q3(float x, float a, float y)//l+ pg+ chist+
 {
     float r;
     r = a/x;
     cout << r*y << endl;
 }
 
-void q4(float v1, float v2, float s, float t)
+void q4(float v1, float v2, float s, float t)//l+ pg+ chist+-
 {
     float v, s2;
     v = v1+v2;
@@ -28,14 +28,14 @@ void q4(float v1, float v2, float s, float t)
     cout << s <<endl;
 }
 
-void q5(float a,float b)
+void q5(float a,float b)//l+ p+- chist+
 {
     float x;
     x = -b / a;
     cout << "a*x+b = 0 при x = " << x << endl;
 }
 
-void q6(float A1,float B1,float C1,float A2,float B2,float C2)
+void q6(float A1,float B1,float C1,float A2,float B2,float C2)//l- pg- chist-
 {
     float x;
     
