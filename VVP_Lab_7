@@ -35,7 +35,7 @@ void q5(float a,float b)//l+ p+- chist+
     cout << "a*x+b = 0 при x = " << x << endl;
 }
 
-void q6(float A1,float B1,float C1,float A2,float B2,float C2)//l- pg- chist-
+void q6(float A1,float B1,float C1,float A2,float B2,float C2)//l+ pg+ chist-
 {
     float x, y;
     cout << "Первое уравнение: " << A1 << "* x + " << B1 << " * y = " << C1 << endl;
