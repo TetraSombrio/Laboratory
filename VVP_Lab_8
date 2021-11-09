@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+task1(byt)
+{
+    float r;
+    r = byt/1024;
+    r = int(r);
+    cout << r << endl;
+}
+
+task2(A, B)
+{
+    while(n < 20)//20 это число знаков в переменной на ввод
+    {
+        m = m%10;
+        n = n/10;
+        mas[i] = m;
+        i++;
+    }
+}
+
+task3(A, B)
+{
+    
+}
