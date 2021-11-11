@@ -1,6 +1,21 @@
 #include <iostream>
 using namespace std;
 
-void sort()
+void sort(int n)
 {
+    float k = 1.247;
+    step = n - 1;
+    while(step >= 1)
+    {
+        int i = 0;
+        while(i < n - step)
+        {
+            if(array[i] > array[i + step])
+            {
+                swap(i, i + step)
+            }
+        i++;
+        }
+    step /= k;
+    }
 }
