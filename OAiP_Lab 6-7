@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-void sort(int n)
+void combsort(int n, int array[])
 {
     float k = 1.247;
-    step = n - 1;
+    int step = n - 1;
     while(step >= 1)
     {
         int i = 0;
@@ -17,5 +17,28 @@ void sort(int n)
         i++;
         }
     step /= k;
+    }
+}
+
+int main()
+{
+    int array[], n;
+    cout << "" << endl;
+    cin >> n;
+    cout << "" << endl;
+    
+    for(i = 0; i >= n; i++)
+    {
+        cin >> array[i];
+    }
+    
+    switch(selector)
+    {
+        case 1:
+            combsort(n, array[])
+        case 2:
+            forcombsort(n, array[])
+        case 3:
+            return 0;
     }
 }
