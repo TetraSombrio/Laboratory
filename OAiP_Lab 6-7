@@ -24,22 +24,22 @@ void combsort(int n, int array[])
         cout << array[i] << endl;
     }
 }
-/*
+
 void forcombsort(int n, int array[])
 {
     float k = 1.247;
-    int step = n - 1;
-    while(step >= 1)
+    for(int step = n - 1; step >= 1; step /= k)
     {
         int i = 0;
         for(i = 0; i < n - step; i++)//проверить не i>n-step ли правильно будет
         {
             if(array[i] > array[i + step])
             {
-                swap(array[i], array[i + step]);
+                array[i] = array[i] ^ array[i + 1];
+                array[i + 1] = array[i + 1] ^ array[i];
+                array[i] = array[i] ^ array[i + 1];
             }
         }
-        step /= k;
     }
     
     for(int i = 0; i <= n - 1; i++)
@@ -47,7 +47,7 @@ void forcombsort(int n, int array[])
         cout << array[i] << endl;
     }
 }
-*/
+
 int main()
 {
     int n, i, selector;
@@ -69,7 +69,7 @@ int main()
         case 1:
             combsort(n, array);
         case 2:
-            //forcombsort(n, array);
+            forcombsort(n, array);
         case 3:
             return 0;
     }
