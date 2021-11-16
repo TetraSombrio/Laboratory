@@ -25,7 +25,7 @@ int main()
 	int array[n];
 	
 	cout << "вводите последовательно элементы массива" << endl;
-	for(k = 0; k < n - 1; k++)
+	for(k = 0; k < n; k++)
 	{
 		cin >> array[k];
 	}
@@ -40,7 +40,7 @@ int main()
 			break;
 	}
 	
-	for(i = 0; i <= n; i++)
+	for(i = 0; i < n; i++)
 	{
 		cout << array[i] << " &\t";
 	}
