@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+void insertsort(int n, int array[])
+{
+    int i, j, x;
+    
+	for(i = 0; i < n; i++)
+	{
+		j = i;
+		x = array[i];
+		while(j > 0 and x < array[j - 1])
+		{
+			swap(array[j], array[j - 1]);
+		}
+		array[j] = x;
+	}
+}
+
+int main()
+{
+	int selector, n, k, i;
+	cout << "Введите размер массива" << endl;
+	cin >> n;
+	int array[n];
+	
+	cout << "вводите последовательно элементы массива" << endl;
+	for(k = 0; k < n - 1; k++)
+	{
+		cin >> array[k];
+	}
+	
+	switch(selector)
+	{
+		case 1:
+			insertsort(n, array);
+			break;
+		case 2:
+			//forinsertsort();
+			break;
+	}
+	
+	for(i = 0; i <= n; i++)
+	{
+		cout << array[i] << " &\t";
+	}
+}
