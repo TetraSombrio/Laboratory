@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void task1(byt)
+void task1(int byt)
 {
     float r;
     r = byt/1024;
@@ -9,7 +9,7 @@ void task1(byt)
     cout << r << endl;
 }
 
-void task2(A, B)
+void task2(int A, int B)
 {
     while(n < 20)//20 это число знаков в переменной на ввод
     {
@@ -20,10 +20,8 @@ void task2(A, B)
     }
 }
 
-void task3(A, B)
+void task3(int A, int B)
 {
-    int A = A;
-	int B = B;
 	int r;
 	
 	r = A - (A / B);
