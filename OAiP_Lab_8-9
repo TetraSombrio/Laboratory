@@ -50,18 +50,28 @@ int main()
 	
 	switch(selector)
 	{
+	    case 0:
+	        break;
 		case 1:
 			insertsort(n, array);
+			system("clear");
+			cout << "Массив отсортирован" << endl;
+			for(i = 0; i < n; i++)
+            {
+                cout << array[i] << "\t";
+            }
+			
 			break;
 		case 2:
 			forinsertsort(n, array);
+			system("clear");
+			cout << "Массив отсортирован" << endl;
+			for(i = 0; i < n; i++)
+            {
+                cout << array[i] << "\t";
+            }
 			break;
 	}
 	
-	cout << "Массив отсортирован" << endl;
 	
-	for(i = 0; i < n; i++)
-	{
-		cout << array[i] << "\t";
-	}
 }
