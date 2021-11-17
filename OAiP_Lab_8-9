@@ -37,7 +37,7 @@ int main()
 	int selector, n, k, i;
 	cout << "Введите размер массива" << endl;
 	cin >> n;
-	int array[n];
+	int array[n];//указываем размер для массива
 	
 	cout << "вводите последовательно элементы массива" << endl;
 	for(k = 0; k < n; k++)
@@ -50,21 +50,20 @@ int main()
 	
 	switch(selector)
 	{
-	    case 0:
-	        break;
+        case 0:
+            break;
 		case 1:
 			insertsort(n, array);
-			system("clear");
+			system("clear");//чистим консоль в Linux, это только для онлайн-компилятора нужно
 			cout << "Массив отсортирован" << endl;
 			for(i = 0; i < n; i++)
             {
                 cout << array[i] << "\t";
             }
-			
 			break;
 		case 2:
 			forinsertsort(n, array);
-			system("clear");
+			system("clear");//чистим консоль в Linux, это только для онлайн-компилятора нужно
 			cout << "Массив отсортирован" << endl;
 			for(i = 0; i < n; i++)
             {
@@ -72,6 +71,4 @@ int main()
             }
 			break;
 	}
-	
-	
 }
