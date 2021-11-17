@@ -9,9 +9,10 @@ void insertsort(int n, int array[])
 	{
 		x = array[i];
 		j = i;
-		while(j > 0 and x < array[j - 1])
+		while((j > 0) and (array[j - 1] > x))
 		{
 			array[j] = array[j - 1];
+			j--;
 		}
 		array[j] = x;
 	}
@@ -57,8 +58,10 @@ int main()
 			break;
 	}
 	
+	cout << "Массив отсортирован" << endl;
+	
 	for(i = 0; i < n; i++)
 	{
-		cout << array[i] << " &\t";
+		cout << array[i] << "\t";
 	}
 }
