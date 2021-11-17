@@ -7,11 +7,25 @@ void insertsort(int n, int array[])
     
 	for(i = 0; i < n; i++)
 	{
-		j = i;
 		x = array[i];
+		j = i;
 		while(j > 0 and x < array[j - 1])
 		{
-			swap(array[j], array[j - 1]);
+			array[j] = array[j - 1];
+		}
+		array[j] = x;
+	}
+}
+
+void forinsertsort(int n, int array[])
+{
+    int i, j, x;
+    
+	for(i = 0; i < n; i++)
+	{
+		for(j = i, x = array[i]; (j > 0) and (x < array[j - 1]); j--)
+		{
+			array[j] = array[j - 1];
 		}
 		array[j] = x;
 	}
@@ -30,13 +44,16 @@ int main()
 		cin >> array[k];
 	}
 	
+	cout << "выберите реализацию алгоритма 1 - цикл while. 2 - цикл for\n" << endl;
+	cin >> selector;
+	
 	switch(selector)
 	{
 		case 1:
 			insertsort(n, array);
 			break;
 		case 2:
-			//forinsertsort();
+			forinsertsort(n, array);
 			break;
 	}
 	
