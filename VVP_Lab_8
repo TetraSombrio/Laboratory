@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-task1(byt)
+void task1(byt)
 {
     float r;
     r = byt/1024;
@@ -9,7 +9,7 @@ task1(byt)
     cout << r << endl;
 }
 
-task2(A, B)
+void task2(A, B)
 {
     while(n < 20)//20 это число знаков в переменной на ввод
     {
@@ -20,7 +20,7 @@ task2(A, B)
     }
 }
 
-task3(A, B)
+void task3(A, B)
 {
     int A = A;
 	int B = B;
@@ -28,6 +28,19 @@ task3(A, B)
 	
 	r = A - (A / B);
 	cout << r << endl;
+}
+
+void task4()
+{
+	m = m%10;
+    n = n/10;
+    mas[i] = m;
+	
+	for(i = 0; i <= 2; i++)
+	{
+		cout << mas[i];
+	}
+	cout << endl;
 }
 
 int main()
@@ -48,6 +61,7 @@ int main()
 			task3();
 			break;
 		case 4:
+			task4()
 			break;
 		case 5:
 			break;
