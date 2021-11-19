@@ -22,8 +22,7 @@ void task2(int A, int B)
 
 void task3(int A, int B)
 {
-	int r;
-	
+    int r;
 	r = A - (A / B);
 	cout << r << endl;
 }
