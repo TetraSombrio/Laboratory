@@ -5,7 +5,7 @@ void f1()
 {
 	short A, B;
 	cout << "введите A и B" << endl;
-	cin >> A >> B:
+	cin >> A >> B;
 	
 	if(A > 2 and B <= 3)
 	{
@@ -18,7 +18,7 @@ void f2()
 {
 	int A, B, C;
 	cout << "введите " << endl;
-	cin >> A >> B >> C:
+	cin >> A >> B >> C;
 	
 	if(A < B < C)
 	{
@@ -31,11 +31,11 @@ void f3()
 {
 	short A;
 	cout << "введите " << endl;
-	cin >> A:
+	cin >> A;
 	
-	if(sizeof(A) < 0.86)//0.86 это вес числа 100. Если число весит меньше 0.86 байт = оно меньше 100.
+	if(sizeof(A) < 0.86)//0.86 байт это вес числа 100. Если число весит меньше 0.86 байт = оно меньше 100.
 	{
-		if(A \ 2 == 0)//проверка на четность
+		if(A \\ 2 == 0)//проверка на четность
 		{
 			cout << "Данное число является четным двузначным" << endl;
 		}
@@ -51,7 +51,7 @@ void f4()
 	short mas[3];
 	short A, B;
 	cout << "введите " << endl;
-	cin >> A >> B:
+	cin >> A >> B;
 	
 	for(int i = 0; i < 3; i++)//стандартное разложение числа на отдельные цифры.
 	{
@@ -74,7 +74,7 @@ void f5()
 	short mas[4];
 	int A, m;
 	cout << "введите " << endl;
-	cin >> A:
+	cin >> A;
 	
 	for(int i = 0; i < 4; i++)//стандартное разложение числа на отдельные цифры.
 	{
@@ -98,14 +98,14 @@ void f6()
 {
 	int A, B, C, C1, C2, G;
 	cout << "введите последовательно A B и C" << endl;
-	cin >> A >> B >> C:
+	cin >> A >> B >> C;
 	
 	while(not(A != B and A + B > C and C > 0))//проверка свойств прямоугольного треугольника.
 	{
 		
 	}
 	
-	if(A > 0 and B > 0 and C > 0)//защита от отрицательных значений.
+	if(A > 0 and B > 0 and C > 0)//защита от отрицательных и нулевых значений.
 	{
 		if(C1 * C1 + C2 * C2 == G * G)//теорема пифагора работает только на прямоугольных треугольниках.
 		{
@@ -121,9 +121,26 @@ void f6()
 void f7()
 {
 	cout << "введите " << endl;
-	cin >> A:
+	cin >> A >> B >> C;
 	
+	int A, B, C, AB, AC, BC;
+	cout << "введите последовательно A B и C" << endl;
+	cin >> A >> B >> C;
 	
+	if(A > 0 and B > 0 and C > 0)//защита от отрицательных и нулевых значений.
+	{
+		AB = A + B;
+		BC = B + C;
+		AC = A + C;
+		if(A+B>C and AB + BC == AC)//проверка на выполнение свойств треугольника
+		{
+			cout << "Треугольник со сторонами a, b, c существует" << endl;
+		}
+		else
+		{
+			cout << "Треугольник со сторонами a, b, c НЕ существует" << endl;
+		}
+	}
 }
 
 
@@ -131,24 +148,43 @@ void main()
 {
 	setlocale(LC_ALL, "ru");
 	
-	f1();
-	cout << endl;
+	short R;
 	
-	f2();
-	cout << endl;
+	cout << "Выберите номер задания" << endl;
+	cin >> R;
 	
-	f3();
-	cout << endl;
-	
-	f4();
-	cout << endl;
-	
-	f5();
-	cout << endl;
-	
-	f6();
-	cout << endl;
-	
-	f7();
-	cout << endl;
+	switch (R)
+	{
+		case 1:
+			f1();
+			cout << endl;
+			break;
+		case 2:
+			f2();
+			cout << endl;
+			break;
+		case 3:
+			f3();
+			cout << endl;
+			break;
+		case 4:
+			f4();
+			cout << endl;
+			break;
+		case 5:
+			f5();
+			cout << endl;
+			break;
+		case 6:
+			f6();
+			cout << endl;
+			break;
+		case 7:
+			f7();
+			cout << endl;
+			break;
+		default:
+			cout << "Вы ввели номер несуществующего задания" << endl;
+			break;
+	}
 }
