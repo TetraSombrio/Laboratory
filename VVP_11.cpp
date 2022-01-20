@@ -215,7 +215,7 @@ void f6()
 
 int main()
 {
-	setlocale(LC_ALL, "russian")
+	setlocale(LC_ALL, "russian");
 	
 	short r;
 	cout << "введите номер задания" << endl;
