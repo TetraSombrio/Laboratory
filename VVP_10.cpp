@@ -33,7 +33,7 @@ void f3()
 	cout << "введите " << endl;
 	cin >> A;
 	
-	if(A < 100 and A > 0)
+	if((A < 100) and (A > 0))
 	{
 		if((A % 2) == 0)//проверка на четность
 		{
@@ -58,8 +58,8 @@ void f4()
 	{
 		m = m%10;
 		mas[i] = m;
-        A = A/10;
-        m = A;
+        	A = A/10;
+        	m = A;
 	}
 	cout << "mas[]" << mas[1] << endl << mas[2] << endl << mas[3] << endl;
 	
@@ -87,9 +87,9 @@ void f5()
 	for(int i = 0; i < 4; i++)//стандартное разложение числа на отдельные цифры.
 	{
 		m = m%10;
-        A = A/10;
-        mas[i] = m;
-        m = A;
+        	A = A/10;
+        	mas[i] = m;
+        	m = A;
 	}
 	
 	if((mas[1] == mas[4]) and (mas[2] == mas[3])
