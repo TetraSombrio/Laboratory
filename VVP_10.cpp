@@ -20,7 +20,7 @@ void f2()
 	cout << "введите " << endl;
 	cin >> A >> B >> C;
 	
-	if(A < B < C)
+	if(A < B and B < C)
 	{
 		cout << "Двойное неравенство A < B < C справедливо" << endl;
 	}
@@ -33,9 +33,9 @@ void f3()
 	cout << "введите " << endl;
 	cin >> A;
 	
-	if(sizeof(A) < 0.86)//0.86 байт это вес числа 100. Если число весит меньше 0.86 байт = оно меньше 100.
+	if(A < 100 and A > 0)
 	{
-		if(A \\ 2 == 0)//проверка на четность
+		if(A / 2 == 0)//проверка на четность
 		{
 			cout << "Данное число является четным двузначным" << endl;
 		}
@@ -48,25 +48,33 @@ void f3()
 
 void f4()
 {
-	short mas[3];
-	short A, B;
-	cout << "введите " << endl;
-	cin >> A >> B;
+	int mas[4];
+	int A, m;
+	cout << "введите трехзначное число" << endl;
+	cin >> A;
+	m = A;
 	
-	for(int i = 0; i < 3; i++)//стандартное разложение числа на отдельные цифры.
+	for(int i = 1; i <= 3; i++)//стандартное разложение числа на отдельные цифры.
 	{
 		m = m%10;
-        n = n/10;
-        mas[i] = m;
-        m = n;
+		mas[i] = m;
+        A = A/10;
+        m = A;
 	}
+	cout << "mas[]" << mas[1] << endl << mas[2] << endl << mas[3] << endl;
 	
-	if(mas[1] < mas[2] < mas[3])
+	if(mas[3] < mas[2] and mas[2] < mas[1])
 	{
 		cout << "Цифры данного числа являются возростающей последовательностью" << endl;
 	}
-	else if(mas[3] < mas[2] < mas[1])
+	else if(mas[1] < mas[2] and mas[2] < mas[3])
+	{
 		cout << "Цифры данного числа являются убывающей последовательностью" << endl;
+	}
+	else
+    {
+        cout << "Цифры данного числа не являются ни возростающей, ни убывающей последовательностью" << endl;
+    }
 }
 
 void f5()
@@ -120,9 +128,6 @@ void f6()
 
 void f7()
 {
-	cout << "введите " << endl;
-	cin >> A >> B >> C;
-	
 	int A, B, C, AB, AC, BC;
 	cout << "введите последовательно A B и C" << endl;
 	cin >> A >> B >> C;
@@ -144,9 +149,11 @@ void f7()
 }
 
 
-void main()
+int main()
 {
-	setlocale(LC_ALL, "ru");
+	//locale::global(std::locale("rus"));
+	//setlocale(LC_ALL, "ru");
+	setlocale(LC_ALL, "Russian");
 	
 	short R;
 	
