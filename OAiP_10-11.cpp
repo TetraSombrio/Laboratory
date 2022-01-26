@@ -3,27 +3,28 @@ using namespace std;
 
 void shellsort(int n, int array[])
 {
-    int i, j, x, d;
+    int i, j, tmp, d;
     
-	d = d / 2;
+	d = n / 2;
 	
 	while(d > 0)
 	{
 		i = d;
 		while(i < n)
 		{
-			x = array[i];
+			tmp = array[i];
 			j = i;
 			while(j >= d)
 			{
-				if(x > array[j - d])
+				if(tmp < array[j - d])
 				{
 					array[j] = array[j - d];
 					j = j - d;
 				}
 				else break;
 			}
-			array[i] = x;
+			array[j] = tmp;
+			i++;
 		}
 		d = d / 2;
 	}
@@ -31,8 +32,7 @@ void shellsort(int n, int array[])
 
 void forshellsort(int n, int array[])
 {
-    int i, j, d;
-    int tmp;
+    int i, j, d, tmp;
     
     for (d = n / 2; d > 0; d /= 2)
     {
