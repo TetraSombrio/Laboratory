@@ -34,41 +34,40 @@ void forinsertsort(int n, int array[])
 
 int main()
 {
-	int selector, n, k, i;
-	cout << "Введите размер массива" << endl;
+	int select, n, k, i;
+	cout << "write numbers of elements in array" << endl;
 	cin >> n;
 	int array[n];//указываем размер для массива
 	
-	cout << "вводите последовательно элементы массива" << endl;
+	cout << "enter the array elements sequentially" << endl;
 	for(k = 0; k < n; k++)
 	{
 		cin >> array[k];
 	}
 	
-	cout << "выберите реализацию алгоритма 1 - цикл while. 2 - цикл for\n" << endl;
-	cin >> selector;
+	cout << "choose algorithm version 1 - while. 2 - for\n" << endl;
+	cin >> select;
 	
-	switch(selector)
+	switch(select)
 	{
-        case 0:
-            break;
 		case 1:
 			insertsort(n, array);
-			system("clear");//чистим консоль в Linux, это только для онлайн-компилятора нужно
-			cout << "Массив отсортирован" << endl;
-			for(i = 0; i < n; i++)
-            {
-                cout << array[i] << "\t";
-            }
+			cout << "Array sorted while" << endl;
 			break;
 		case 2:
 			forinsertsort(n, array);
-			system("clear");//чистим консоль в Linux, это только для онлайн-компилятора нужно
-			cout << "Массив отсортирован" << endl;
-			for(i = 0; i < n; i++)
-            {
-                cout << array[i] << "\t";
-            }
+			cout << "Array sorted for" << endl;
+			break;
+		default:
+            cout << "invalid value";
+            return 0;
 			break;
 	}
+	
+	for(i = 0; i < n; i++)
+    {
+        cout << array[i] << "\t";
+    }
+    
+    return 0;
 }
