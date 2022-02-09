@@ -165,7 +165,7 @@ void quicksort(long int array[], int b, int e)
 int main()
 {
 	long int select, n, k, i, randovalue = 1, tmprand;
-	float starttimer, endtimer;
+	//float starttimer, endtimer;
 	//float start, end;
 	
 	cout << "write numbers of elements in array" << endl;
