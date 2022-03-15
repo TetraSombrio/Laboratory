@@ -1,0 +1,66 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void f4()
+{
+    int prob[4];
+    for(int j = 0; j < 3; j++)
+    {
+        for(int i = 0; i <= 4; )
+        {
+            if(i == 0)
+            {
+                prob[4] = {5, 4, 5, 4};
+            }
+            else if(i == 1)
+            {
+                prob[4] = {3, 3, 4, 2};
+            }
+            else if(i == 2)
+            {
+                prob[4] = {3, 4, 5, 4};
+            }
+            while(prcount)
+            i = 0;
+        }
+    }
+}
+
+void f5()
+{
+    
+}
+
+void f7()
+{
+    
+}
+
+void f8()
+{
+    
+}
+
+void f9()
+{
+    
+}
+
+void f11()
+{
+    
+}
+
+void f12()
+{
+    
+}
+
+int main()
+{
+    cout<<"enter";
+    cin >> r;
+    f4();
+    return 0;
+}
