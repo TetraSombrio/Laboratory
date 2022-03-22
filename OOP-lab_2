@@ -74,8 +74,10 @@ void f9();
 {
     double r, a, b, c, d;
     
-    cout << "consistently write a, b, c, d" << endl;
-    cin >> a >> b >> c >> d;
+    cout << "consistently write a/b" << endl;
+    cin >> a >> b;
+    cout << "consistently write c/d" << endl;
+    cin >> c >> d;
     r = (a*d + b*c)/(b*d);
     cout << "result a/b + c/d is " << r << endl;
 }
