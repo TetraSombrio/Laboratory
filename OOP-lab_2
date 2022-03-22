@@ -52,7 +52,13 @@ void f6()
 
 void f7()
 {
+    int celsys, farenheit;
     
+    cout << "write" << endl;
+    cin >> celsys;
+    
+    farenheit = celsys * ((9/5) + 32);
+    cout << farenheit << endl;
 }
 
 void f8()
