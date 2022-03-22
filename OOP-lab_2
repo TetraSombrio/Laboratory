@@ -29,7 +29,25 @@ void f4()
 
 void f5()
 {
+    char ab;
+    cout << "write symbol" << endl;
+    cin >> ab;
+    cout << ab.islower() << endl;
+}
+
+void f6()
+{
+    double bucks, yens, marks, funts, franks;
     
+    cout << "write" << endl;
+    cin >> bucks;
+    
+    yens = bucks * 0.00955;
+    marks = bucks * 0.584;
+    funts = bucks * 1.487;
+    franks = bucks * 0.172;
+    
+    cout << funts << endl << yens << endl << marks << franks << endl;
 }
 
 void f7()
