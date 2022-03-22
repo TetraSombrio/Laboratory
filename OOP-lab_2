@@ -70,9 +70,14 @@ void f8()
     << 1993 << setw(10) << setfill("'") << 16200 << endl;
 }
 
-void f9()
+void f9();
 {
+    double r, a, b, c, d;
     
+    cout << "consistently write a, b, c, d" << endl;
+    cin >> a >> b >> c >> d;
+    r = (a*d + b*c)/(b*d);
+    cout << "result a/b + c/d is " << r << endl;
 }
 
 void f11()
