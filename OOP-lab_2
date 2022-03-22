@@ -64,6 +64,10 @@ void f7()
 void f8()
 {
     
+    cout << 1990 << setw(8) << setfill(".") << 135 << endl;
+    << 1991 << setw(12) << setfill(",") << 7290 << endl;
+    << 1992 << setw(6) << setfill("/") << 11300 << endl;
+    << 1993 << setw(10) << setfill("'") << 16200 << endl;
 }
 
 void f9()
