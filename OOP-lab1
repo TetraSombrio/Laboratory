@@ -1,101 +1,111 @@
 #include <iostream>
-#include <string>
+
 using namespace std;
 
-void f4()
+/*
+void f5()
 {
-    int prob[4];
-    for(int j = 0; j < 3; j++)
+    for(int iy = 0; iy < 20; iy++)
     {
-        for(int i = 0; i <= 4; )
+        for(int lu = 0; lu < 40; lu+=2)
         {
-            if(i == 0)
-            {
-                prob[4] = {5, 4, 5, 4};
-            }
-            else if(i == 1)
-            {
-                prob[4] = {3, 3, 4, 2};
-            }
-            else if(i == 2)
-            {
-                prob[4] = {3, 4, 5, 4};
-            }
-            while(prcount)
-            i = 0;
+            
         }
     }
 }
-
-void f5()
-{
-    char ab;
-    cout << "write symbol" << endl;
-    cin >> ab;
-    cout << ab.islower() << endl;
-}
+*/
 
 void f6()
-{
-    double bucks, yens, marks, funts, franks;
+{  
+    unsigned int numb;
+    unsigned long fact=1;//long for larger numbers  
+    while(numb != 0)
+    {
+        cout << "Enter a number: ";
+        cin >> numb;//get number
+        if(numb == 0) return;
+        else cout << endl;
+    }
     
-    cout << "write" << endl;
-    cin >> bucks;
-    
-    yens = bucks * 0.00955;
-    marks = bucks * 0.584;
-    funts = bucks * 1.487;
-    franks = bucks * 0.172;
-    
-    cout << funts << endl << yens << endl << marks << franks << endl;
+    for(int j=numb; j>0; j--)//multiply 1 by
+    {
+        fact *= j;//numb, numb-1, ..., 2, 1
+    }
+    cout << "Factorial is " << fact << endl;
+    return;
 }
 
-void f7()
+double f7()
 {
-    int celsys, farenheit;
+    double na4vklad, percent;
+    int years;
     
-    cout << "write" << endl;
-    cin >> celsys;
+    cout << "enter sum of start capital" << endl;
+    cin >> na4vklad;
+    double reserv_na4vklad = na4vklad;
+    cout << "enter year count" << endl;
+    cin >> years;
+    cout << "enter percent(11.8'%' = 11.8)" << endl;
+    cin >> percent;
+    percent /= 100;
     
-    farenheit = celsys * ((9/5) + 32);
-    cout << farenheit << endl;
+    for(years; years >= 0; years--)
+    {
+        na4vklad += (na4vklad * percent);
+    }
+    return r;
 }
+
+class EngPounds
+{
+    private:
+        float pnd;
+        float shlng;
+        float pny;
+        
+        float calcpennywithpounds()
+        {
+            return ();
+        }
+        
+        float calcpennywithshillings()
+        {
+            return ();
+        }
+        
+        float calcshillingswithfunt()
+        {
+            
+            return ();
+        }
+    public:
+        float printvalues()
+        {
+            cout << "" << pnd << endl;
+            cout << "" << shlng << endl;
+            cout << "" << pny << endl;
+        }
+        
+        float entervalues(pound, shillings, penny)
+        {
+            pnd = pound;
+            shlng = shillings;
+            pny = penny;
+        }
+};
 
 void f8()
 {
-    
-    cout << 1990 << setw(8) << setfill(".") << 135 << endl;
-    << 1991 << setw(12) << setfill(",") << 7290 << endl;
-    << 1992 << setw(6) << setfill("/") << 11300 << endl;
-    << 1993 << setw(10) << setfill("'") << 16200 << endl;
-}
-
-void f9();
-{
-    double r, a, b, c, d;
-    
-    cout << "consistently write a/b" << endl;
-    cin >> a >> b;
-    cout << "consistently write c/d" << endl;
-    cin >> c >> d;
-    r = (a*d + b*c)/(b*d);
-    cout << "result a/b + c/d is " << r << endl;
-}
-
-void f11()
-{
-    
-}
-
-void f12()
-{
-    
+    while()
+    {
+        engpounds.
+    }
 }
 
 int main()
 {
-    cout<<"enter";
-    cin >> r;
-    f4();
+    f6();
+    f7();
+    cout << f7() << endl;
     return 0;
 }
