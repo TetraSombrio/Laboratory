@@ -59,31 +59,33 @@ double f7()
 class EngPounds
 {
     private:
-        float pnd;
-        float shlng;
-        float pny;
+        int pnd;
+        int shlng;
+        int pny;
         
-        float calcpennywithpounds()
+        int calcpennywithpounds()
         {
-            return ();
+            pny = pnd * 240;
+            return pny;
         }
         
-        float calcpennywithshillings()
+        int calcpennywithshillings()
         {
-            return ();
+            pny = shlng * 12;
+            return pny;
         }
         
-        float calcshillingswithfunt()
+        int calcshillingswithpounds()
         {
-            
-            return ();
+            shlng = pnd * 20;
+            return shlng;
         }
     public:
-        float printvalues()
+        void printvalues()
         {
-            cout << "" << pnd << endl;
-            cout << "" << shlng << endl;
-            cout << "" << pny << endl;
+            cout << "pounds = " << pnd << endl;
+            cout << "shillings = " << shlng << endl;
+            cout << "penny = " << pny << endl;
         }
         
         float entervalues(pound, shillings, penny)
@@ -96,10 +98,18 @@ class EngPounds
 
 void f8()
 {
-    while()
+    do
     {
-        engpounds.
+        cout << "" << endl;
+        cin >> pound >> shillings >> penny;
+        if((pound != 0)&&(shillings&&penny == 0))
+        {
+            
+        }
+        engpounds.entervalues(pound, shillings, penny)
+        
     }
+    while()
 }
 
 int main()
