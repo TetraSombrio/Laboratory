@@ -137,6 +137,6 @@ int main()
 {
     f6();
     f7();
-    cout << f7() << endl;
+    f8();
     return 0;
 }
