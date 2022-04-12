@@ -68,12 +68,12 @@ class EngPounds
         {
             if(penny > 11)
             {
-                penny = 0;
+                penny -= 12;
                 ++shillings;
             }
             if(shillings > 19)
             {
-                shillings = 0;
+                shillings -= 20;
                 ++pound;
             }
         }
@@ -89,7 +89,7 @@ class EngPounds
             pound   = value_pound1 + value_pound2; // инициализация фунта
             shillings = value_shillings1 + value_shillings2; // инициализация шиллингов
             penny  = value_penny1 + value_penny2; // инициализация пенни
-            calcPoundAndShilligs(pound, shillings, penny);
+            EngPounds.calcPoundAndShilligs(pound, shillings, penny);
         }
 };
 
