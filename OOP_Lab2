@@ -21,15 +21,15 @@ void f6()
     unsigned long fact=1;//long for larger numbers  
     while(numb != 0)
     {
+        fact = 1;
         cout << "Enter a number: ";
         cin >> numb;//get number
         if(numb == 0) return;
-        else cout << endl;
-    }
-    
-    for(int j=numb; j>0; j--)//multiply 1 by
-    {
-        fact *= j;//numb, numb-1, ..., 2, 1
+        for(int j=numb; j>0; j--)//multiply 1 by
+        {
+            fact *= j;//numb, numb-1, ..., 2, 1
+            cout << endl << "Factorial is " << fact << endl;
+        }
     }
     cout << "Factorial is " << fact << endl;
     return;
@@ -45,7 +45,7 @@ double f7()
     double reserv_na4vklad = na4vklad;
     cout << "enter year count" << endl;
     cin >> years;
-    cout << "enter percent(11.8'%' = 11.8)" << endl;
+    cout << "enter percent(11.8'%' = 11,8)" << endl;
     cin >> percent;
     percent /= 100;
     
@@ -53,7 +53,8 @@ double f7()
     {
         na4vklad += (na4vklad * percent);
     }
-    return r;
+    cout << na4vklad << endl;
+    return na4vklad;
 }
 
 class EngPounds
@@ -85,16 +86,14 @@ class EngPounds
             cout << "" << shillings << endl;
             cout << "" << penny << endl;
         }
-        
-        float
 }
 
 void f8()
 {
-    while()
+    do
     {
-        engpounds.
-    }
+        
+    }while()
 }
 
 int main()
