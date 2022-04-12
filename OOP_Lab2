@@ -64,36 +64,73 @@ class EngPounds
         float shillings;
         float penny;
         
-        float calcpennywithpounds()
+        void calcpennywithshillings()
         {
-            return ();
+            if(penny > 11)
+            {
+                penny = 0;
+                ++shillings;
+            }
         }
         
-        float calcpennywithshillings()
+        void calcpoundswithshilling()
         {
-            return ();
-        }
-        
-        float calcshillingswithfunt()
-        {
-            return ();
+            if(shillings > 19)
+            {
+                shillings = 0;
+                ++pound;
+            }
         }
         
     public:
-        float printvalues()
+        void printValues()
         {
-            cout << "" << pound << endl;
-            cout << "" << shillings << endl;
-            cout << "" << penny << endl;
+            cout << pound << "." << shillings << "." << penny << endl;
         }
-}
+        /*
+        void setValues(int value_pound, int value_shillings, int value_penny) // установка денег в формате pound.shill.pence
+        {
+            pound   = value_pound; // инициализация фунта
+            shillings = value_shillings; // инициализация шиллингов
+            penny  = value_penny; // инициализация пенни
+        }
+        */
+        void sumValues(int value_pound1, int value_shillings1, int value_penny1, int value_pound2, int value_shillings2, int value_penny2)
+        {
+            pound   = value_pound1 + value_pound2; // инициализация фунта
+            shillings = value_shillings1 + value_shillings2; // инициализация шиллингов
+            calcpoundswithshilling();
+            penny  = value_penny1 + value_penny2; // инициализация пенни
+            calcpoundswithshilling();
+        }
+};
 
 void f8()
 {
+    string resp;
+    int pnd1, shllng1, pny1, pnd2, shllng2, pny2;
     do
     {
+        pnd1 = 0;
+        pnd2 = 0;
+        shllng1 = 0;
+        shllng2 = 0;
+        pny1 = 0;
+        pny2 = 0;
         
-    }while()
+        EngPounds objEngPounds;
+        cout << "последовательно вводите значения первого кошелька" << endl;
+        cin >> pnd1 >> shllng1 >> pny1;
+        cout << "последовательно вводите значения второго кошелька" << endl;
+        cin >> pnd2 >> shllng2 >> pny2;
+        objEngPounds.sumValues(pnd1, shllng1, pny1, pnd2, shllng2, pny2);
+        
+        objEngPounds.printValues();
+        
+        cout << "хотите продолжить?\t(y/n)" << endl;
+        cin >> resp;
+    }
+    while(resp == "y");
 }
 
 int main()
