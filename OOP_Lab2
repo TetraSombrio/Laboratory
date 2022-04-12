@@ -64,7 +64,7 @@ class EngPounds
         float shillings;
         float penny;
         
-        void calcPoundAndShilligs(int pound, int shillings, int penny)
+        void calcPoundAndShilligs()
         {
             if(penny > 11)
             {
@@ -89,7 +89,7 @@ class EngPounds
             pound   = value_pound1 + value_pound2; // инициализация фунта
             shillings = value_shillings1 + value_shillings2; // инициализация шиллингов
             penny  = value_penny1 + value_penny2; // инициализация пенни
-            EngPounds.calcPoundAndShilligs(pound, shillings, penny);
+            EngPounds.calcPoundAndShilligs();
         }
 };
 
