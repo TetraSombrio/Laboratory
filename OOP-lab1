@@ -70,20 +70,16 @@ class EngPounds
             ++pnd;
         }
         
-        int calcpennyinshillings()
+        void calcpennyinshillings()
         {
-            //pny = shlng * 12;
             pny = pny - 12;
             ++shlng;
-            return pny;
         }
         
-        int calcshillingsinpounds()
+        void calcshillingsinpounds()
         {
-            //shlng = pnd * 20;
             shlng = shlng - 20;
             ++pnd;
-            return shlng;
         }
     public:
         void printvalues()
