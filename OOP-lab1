@@ -13,7 +13,7 @@ void f5()
         }
     }
 }
-*/
+
 
 void f6()
 {  
@@ -53,9 +53,10 @@ double f7()
     {
         na4vklad += (na4vklad * percent);
     }
+    double r = na4vklad;
     return r;
 }
-
+*/
 class EngPounds
 {
     private:
@@ -63,21 +64,25 @@ class EngPounds
         int shlng;
         int pny;
         
-        int calcpennywithpounds()
+        void calcpennyinpounds()
         {
-            pny = pnd * 240;
+            pny = pny - 240;
+            ++pnd;
+        }
+        
+        int calcpennyinshillings()
+        {
+            //pny = shlng * 12;
+            pny = pny - 12;
+            ++shlng;
             return pny;
         }
         
-        int calcpennywithshillings()
+        int calcshillingsinpounds()
         {
-            pny = shlng * 12;
-            return pny;
-        }
-        
-        int calcshillingswithpounds()
-        {
-            shlng = pnd * 20;
+            //shlng = pnd * 20;
+            shlng = shlng - 20;
+            ++pnd;
             return shlng;
         }
     public:
@@ -88,11 +93,26 @@ class EngPounds
             cout << "penny = " << pny << endl;
         }
         
-        float entervalues(pound, shillings, penny)
+        void recalc()
         {
-            pnd = pound;
-            shlng = shillings;
-            pny = penny;
+            if((pny != 0)&&(pny >= 240))
+            {
+                calcpennyinpounds();
+            }
+            if((pny != 0)&&(pny >= 12))
+            {
+                calcpennyinshillings();
+            }
+            if((shlng != 0)&&(shlng >= 20))
+            {
+                calcshillingsinpounds();
+            }
+        }
+        
+        void entervalues()
+        {
+            cout << "enter values of pounds, shillings, pences" << endl;
+            cin >> pnd >> shlng >> pny;
         }
 };
 
@@ -101,21 +121,20 @@ void f8()
     do
     {
         cout << "" << endl;
-        cin >> pound >> shillings >> penny;
-        if((pound != 0)&&(shillings&&penny == 0))
-        {
-            
-        }
-        engpounds.entervalues(pound, shillings, penny)
+        EngPounds enpounds;
+        enpounds.entervalues();
+        enpounds.recalc();
+        enpounds.printvalues();
         
     }
-    while()
+    while(true);
 }
 
 int main()
 {
-    f6();
-    f7();
-    cout << f7() << endl;
+    //f6();
+    //f7();
+    //cout << f7() << endl;
+    f8();
     return 0;
 }
