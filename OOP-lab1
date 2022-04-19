@@ -13,7 +13,7 @@ void f5()
         }
     }
 }
-
+*/
 
 void f6()
 {  
@@ -56,7 +56,7 @@ double f7()
     double r = na4vklad;
     return r;
 }
-*/
+
 class EngPounds
 {
     private:
@@ -118,6 +118,7 @@ class EngPounds
 
 void f8()
 {
+    string r;
     do
     {
         cout << "" << endl;
@@ -125,16 +126,17 @@ void f8()
         enpounds.entervalues();
         enpounds.recalc();
         enpounds.printvalues();
-        
+        cout << "continue?(y/n)" << endl;
+        cin >> r;
     }
-    while(true);
+    while(r == "y");
 }
 
 int main()
 {
-    //f6();
-    //f7();
-    //cout << f7() << endl;
+    f6();
+    f7();
+    cout << f7() << endl;
     f8();
     return 0;
 }
