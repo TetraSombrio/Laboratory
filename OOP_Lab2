@@ -64,8 +64,9 @@ class ParsTool
 {
     private:
         string s;
-        string ctch, rs;
+        string ctch;
     public:
+        string rs;
         /*
         bool isStringWithInt(string s)
         {
@@ -142,7 +143,8 @@ class EngPounds
             string r2;
             cout << "" << endl;
             cin >> r2;
-            r = ParsTool.inToString(r2);
+            ParsTool parsetool;
+            r = parsetool.inToString(r2);
             switch(r)
             {
                 case 1:
