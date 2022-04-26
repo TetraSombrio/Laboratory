@@ -1,4 +1,8 @@
+#include <string>
+#include <sstream>
 #include <iostream>
+
+#include <cstdlib>
 
 using namespace std;
 
@@ -56,13 +60,49 @@ double f7()
     cout << na4vklad << endl;
     return na4vklad;
 }
+class ParsTool
+{
+    private:
+        string s;
+        string ctch, rs;
+    public:
+        /*
+        bool isStringWithInt(string s)
+        {
+            if()
+        }
+        */
+        int inToString(string s)
+        {
+            int r;
+            r = stoi(s);
+            return r;
+        }
+        
+        string tryInToString(string s)
+        {
+            try
+            {
+                rs = stoi(s);
+            }
+            catch(...)
+            {
+                return ctch;//как нибудь записать сюда ошибку
+            }
+            return rs;
+        }
+};
 
 class EngPounds
 {
     private:
-        float pound;
-        float shillings;
-        float penny;
+        int pound;
+        int shillings;
+        int penny;
+        
+        int pound2;
+        int shillings2;
+        int penny2;
         
         void calcPoundAndShilligs()
         {
@@ -89,7 +129,41 @@ class EngPounds
             pound   = value_pound1 + value_pound2; // инициализация фунта
             shillings = value_shillings1 + value_shillings2; // инициализация шиллингов
             penny  = value_penny1 + value_penny2; // инициализация пенни
-            EngPounds.calcPoundAndShilligs();
+            calcPoundAndShilligs();
+        }
+        void calc()
+        {
+            cout << "write " << endl;
+            cin >> pound >> shillings >> penny;
+            cout << "write " << endl;
+            cin >> pound2 >> shillings2 >> penny2;
+            
+            int r;
+            string r2;
+            cout << "" << endl;
+            cin >> r2;
+            r = ParsTool.inToString(r2);
+            switch(r)
+            {
+                case 1:
+                    pound += pound2;
+                    shillings += shillings2;
+                    penny += penny2;
+                case 2:
+                    pound -= pound2;
+                    shillings -= shillings2;
+                    penny -= penny2;
+                case 3:
+                    pound *= pound2;
+                    shillings *= shillings2;
+                    penny *= penny2;
+                case 4:
+                    pound /= pound2;
+                    shillings /= shillings2;
+                    penny /= penny2;
+            }
+            calcPoundAndShilligs();
+            printValues();
         }
 };
 
