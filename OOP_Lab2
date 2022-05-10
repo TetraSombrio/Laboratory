@@ -1,35 +1,43 @@
 #include <string>
 #include <sstream>
 #include <iostream>
-
 #include <cstdlib>
-
 using namespace std;
 
-/*
 void f5()
 {
-    for(int iy = 0; iy < 20; iy++)
+    /**/
+    for (int i = 1; i <= 20; ++i)
     {
-        for(int lu = 0; lu < 40; lu+=2)
+        for (int k = 40; k >= i; k-=2)
         {
-            
+            cout << " ";
         }
+
+        for (int j = 0; j < i; ++j)
+            cout << 'X';
+        cout << '\n';
     }
+    /*
+    for (int i = 1; i <= 20; ++i)
+    {
+        string str(i, 'X');// создаем переменную длинной в i. Внутри нее X, это и будет строка
+        cout << str << endl;
+    }
+    */
 }
-*/
 
 void f6()
-{  
-    unsigned int numb;
-    unsigned long fact=1;//long for larger numbers  
-    while(numb != 0)
+{
+    unsigned int numb = 1;
+    unsigned long fact = 1;//long for larger numbers  
+    while (numb != 0)
     {
         fact = 1;
         cout << "Enter a number: ";
         cin >> numb;//get number
-        if(numb == 0) return;
-        for(int j=numb; j>0; j--)//multiply 1 by
+        if (numb == 0) return;
+        for (int j = numb; j > 0; j--)//multiply 1 by
         {
             fact *= j;//numb, numb-1, ..., 2, 1
             cout << endl << "Factorial is " << fact << endl;
@@ -43,130 +51,146 @@ double f7()
 {
     double na4vklad, percent;
     int years;
-    
+
     cout << "enter sum of start capital" << endl;
     cin >> na4vklad;
     double reserv_na4vklad = na4vklad;
     cout << "enter year count" << endl;
     cin >> years;
-    cout << "enter percent(11.8'%' = 11,8)" << endl;
+    cout << "enter percent(write with .)" << endl;
     cin >> percent;
     percent /= 100;
-    
-    for(years; years >= 0; years--)
+
+    for (int i = years; i > 0; i--)
     {
         na4vklad += (na4vklad * percent);
     }
     cout << na4vklad << endl;
     return na4vklad;
 }
+
 class ParsTool
 {
-    private:
-        string s;
-        string ctch;
-    public:
-        string rs;
-        /*
-        bool isStringWithInt(string s)
+private:
+    string s;
+    string ctch;
+public:
+    string rs;
+    /*
+    bool isStringWithInt(string s)
+    {
+        if()
+    }
+    */
+    int inToString(string s)
+    {
+        int r;
+        r = stoi(s);
+        return r;
+    }
+
+    string tryInToString(string s)
+    {
+        try
         {
-            if()
+            rs = stoi(s);
         }
-        */
-        int inToString(string s)
+        catch (...)
         {
-            int r;
-            r = stoi(s);
-            return r;
+            return ctch;//как нибудь записать сюда ошибку
         }
-        
-        string tryInToString(string s)
-        {
-            try
-            {
-                rs = stoi(s);
-            }
-            catch(...)
-            {
-                return ctch;//как нибудь записать сюда ошибку
-            }
-            return rs;
-        }
+        return rs;
+    }
 };
 
 class EngPounds
 {
-    private:
-        int pound;
-        int shillings;
-        int penny;
-        
-        int pound2;
-        int shillings2;
-        int penny2;
-        
-        void calcPoundAndShilligs()
+private:
+    int pound;
+    int shillings;
+    int penny;
+
+    int pound2;
+    int shillings2;
+    int penny2;
+
+    void calcPoundAndShilligs()
+    {
+        if (penny > 11)
         {
-            if(penny > 11)
-            {
-                penny -= 12;
-                ++shillings;
-            }
-            if(shillings > 19)
-            {
-                shillings -= 20;
-                ++pound;
-            }
+            penny -= 12;
+            ++shillings;
         }
-        
-    public:
-        void printValues()
+        if (shillings > 19)
         {
-            cout << pound << "." << shillings << "." << penny << endl;
+            shillings -= 20;
+            ++pound;
         }
-        
-        void sumValues(int value_pound1, int value_shillings1, int value_penny1, int value_pound2, int value_shillings2, int value_penny2)
+    }
+
+public:
+    void printValues()
+    {
+        cout << pound << "." << shillings << "." << penny << endl;
+    }
+
+    void sumValues(int value_pound1, int value_shillings1, int value_penny1, int value_pound2, int value_shillings2, int value_penny2)
+    {
+        pound = value_pound1 + value_pound2; // инициализация фунта
+        shillings = value_shillings1 + value_shillings2; // инициализация шиллингов
+        penny = value_penny1 + value_penny2; // инициализация пенни
+        calcPoundAndShilligs();
+    }
+    void subValues(int value_pound1, int value_shillings1, int value_penny1, int value_pound2, int value_shillings2, int value_penny2)
+    {
+        pound = value_pound1 - value_pound2; // инициализация фунта
+        shillings = value_shillings1 - value_shillings2; // инициализация шиллингов
+        penny = value_penny1 - value_penny2; // инициализация пенни
+        calcPoundAndShilligs();
+    }
+    void multValues(int value_pound1, int value_shillings1, int value_penny1, int mnoj)
+    {
+        pound = value_pound1 * mnoj; // инициализация фунта
+        shillings = value_shillings1 * mnoj; // инициализация шиллингов
+        penny = value_penny1 * mnoj; // инициализация пенни
+        calcPoundAndShilligs();
+    }
+
+    void calc()
+    {
+        cout << "write " << endl;
+        cin >> pound >> shillings >> penny;
+        cout << "write " << endl;
+        cin >> pound2 >> shillings2 >> penny2;
+
+        int r;
+        string r2;
+        cout << "" << endl;
+        cin >> r2;
+        ParsTool parsetool;
+        r = parsetool.inToString(r2);
+        switch (r)
         {
-            pound   = value_pound1 + value_pound2; // инициализация фунта
-            shillings = value_shillings1 + value_shillings2; // инициализация шиллингов
-            penny  = value_penny1 + value_penny2; // инициализация пенни
-            calcPoundAndShilligs();
+        case 1:
+            pound += pound2;
+            shillings += shillings2;
+            penny += penny2;
+        case 2:
+            pound -= pound2;
+            shillings -= shillings2;
+            penny -= penny2;
+        case 3:
+            pound *= pound2;
+            shillings *= shillings2;
+            penny *= penny2;
+        case 4:
+            pound /= pound2;
+            shillings /= shillings2;
+            penny /= penny2;
         }
-        void calc()
-        {
-            cout << "write " << endl;
-            cin >> pound >> shillings >> penny;
-            cout << "write " << endl;
-            cin >> pound2 >> shillings2 >> penny2;
-            
-            int r;
-            string r2;
-            cout << "" << endl;
-            cin >> r2;
-            ParsTool parsetool;
-            r = parsetool.inToString(r2);
-            switch(r)
-            {
-                case 1:
-                    pound += pound2;
-                    shillings += shillings2;
-                    penny += penny2;
-                case 2:
-                    pound -= pound2;
-                    shillings -= shillings2;
-                    penny -= penny2;
-                case 3:
-                    pound *= pound2;
-                    shillings *= shillings2;
-                    penny *= penny2;
-                case 4:
-                    pound /= pound2;
-                    shillings /= shillings2;
-                    penny /= penny2;
-            }
-            calcPoundAndShilligs();
-            printValues();
-        }
+        calcPoundAndShilligs();
+        printValues();
+    }
 };
 
 void f8()
@@ -181,26 +205,201 @@ void f8()
         shllng2 = 0;
         pny1 = 0;
         pny2 = 0;
-        
+
         EngPounds objEngPounds;
         cout << "последовательно вводите значения первого кошелька" << endl;
         cin >> pnd1 >> shllng1 >> pny1;
         cout << "последовательно вводите значения второго кошелька" << endl;
         cin >> pnd2 >> shllng2 >> pny2;
         objEngPounds.sumValues(pnd1, shllng1, pny1, pnd2, shllng2, pny2);
-        
+
         objEngPounds.printValues();
-        
+
         cout << "хотите продолжить?\t(y/n)" << endl;
         cin >> resp;
+    } while (resp == "y");
+}
+
+void f9()
+{
+    int cnplace, a;
+
+    cout << "write count of places" << endl;
+    cin >> cnplace;
+    cout << "write count of people" << endl;
+    cin >> a;
+
+    int b = a - 1;
+    for (int i = cnplace; cnplace > 1; cnplace--)
+    {
+        a *=(b);
+        b--;
     }
-    while(resp == "y");
+
+    cout << a << endl;
+}
+
+double f10()
+{
+    double na4vklad, percent, finalsum;
+    int years = 1;
+
+    cout << "enter sum of start capital" << endl;
+    cin >> na4vklad;
+    double reserv_na4vklad = na4vklad;
+    cout << "enter percent(write with .)" << endl;
+    cin >> percent;
+    cout << "enter final sum on your wallet" << endl;
+    cin >> finalsum;
+    percent /= 100;
+
+    while(years < 100)
+    {
+        if ((round(na4vklad * 100) / 100) == (round(finalsum * 100) / 100))
+        {
+            years--;
+            break;
+        }
+        else
+        {
+            na4vklad += (na4vklad * percent);
+        }
+        years++;
+    }
+    cout << years << endl;
+    return years;
+}
+
+void f11()
+{
+    int selector;
+    int pnd1, shllng1, pny1, pnd2, shllng2, pny2, mnoj;
+
+    cout << "choose an action: 1-addition, 2-subtraction, 3-multiplication." << endl;
+    cin >> selector;
+
+    EngPounds objEngPounds;
+
+    switch (selector)
+    {
+
+    case 1:
+        cout << "enter the values of the first wallet sequentially" << endl;
+        cin >> pnd1 >> shllng1 >> pny1;
+        cout << "enter the values of the second wallet sequentially" << endl;
+        cin >> pnd2 >> shllng2 >> pny2;
+        objEngPounds.sumValues(pnd1, shllng1, pny1, pnd2, shllng2, pny2);
+    case 2:
+        cout << "enter the values of the first wallet sequentially" << endl;
+        cin >> pnd1 >> shllng1 >> pny1;
+        cout << "enter the values of the second wallet sequentially" << endl;
+        cin >> pnd2 >> shllng2 >> pny2;
+        objEngPounds.subValues(pnd1, shllng1, pny1, pnd2, shllng2, pny2);
+    case 3:
+        cout << "enter the values of the first wallet sequentially" << endl;
+        cin >> pnd1 >> shllng1 >> pny1;
+        cout << "write scale value" << endl;
+        cin >> mnoj;
+        objEngPounds.multValues(pnd1, shllng1, pny1, mnoj);
+    }
+    
+}
+
+void f12()
+{
+    int a = 0, b = 1, c = 0, d = 1;
+    double re = 0;
+    unsigned int place;
+    string r, selector, proc;
+
+
+    cout << "write first drob" << endl;
+    cin >> r;
+    int i = 0;
+
+
+    while (1>0)
+    {
+        place = r.find("/");//находим местоположение "/"
+        if (i == place)//если дошли до этого символа, то выйти из цикла
+        {
+            break;
+        }
+        else
+            proc += r[i];//записываем символы до знака дроби в "a"
+            i++;
+    }
+    a = stoi(proc);//конвертируем string в int
+
+    proc = "";
+    for (int k = i+1; k < r.length(); k++)//считываем оставшиеся символы
+    {
+        proc += r[k];//записываем символы после знака дроби в "b"
+    }
+    b = stoi(proc);
+
+
+    cout << "write second drob" << endl;
+    cin >> r;
+    int ij = 0;
+    proc = "";
+
+    while (1 > 0)
+    {
+        place = r.find("/");//находим местоположение "/"
+        if (ij == place)
+        {
+            break;
+        }
+        else
+            proc += r[ij];//записываем символы до знака дроби в "a"
+        ij++;
+    }
+    c = stoi(proc);
+
+    proc = "";
+    for (int k = ij+1; k < r.length(); k++)//считываем оставшиеся символы
+    {
+        proc += r[k];//записываем символы после знака дроби в "d"
+    }
+    d = stoi(proc);
+
+
+    cout << "select math operand" << endl;
+    cin >> selector;
+
+    if (selector == "+")
+    {
+        re = ((a * d) + (b * c)) / (b * d);
+        cout << re << endl;
+    }
+    else if (selector == "-")
+    {
+        re = ((a * d) - (b * c)) / (b * d);
+        cout << re << endl;
+    }
+    else if (selector == "*")
+    {
+        re = (a * c) / (b * d);
+        cout << re << endl;
+    }
+    else if (selector == "/")
+    {
+        re = (a / d) / (b * c);
+        cout << re << endl;
+    }
 }
 
 int main()
 {
+    
+    f5();
     f6();
     f7();
     f8();
+    f9();
+    f10();
+    f11();
+    f12();
     return 0;
 }
