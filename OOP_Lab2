@@ -1,3 +1,4 @@
+// OOP_lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -6,8 +7,7 @@ using namespace std;
 
 void f5()
 {
-    /**/
-    for (int i = 1; i <= 20; ++i)
+    for (int i = 1; i <= 40; i+=2)
     {
         for (int k = 40; k >= i; k-=2)
         {
@@ -18,13 +18,6 @@ void f5()
             cout << 'X';
         cout << '\n';
     }
-    /*
-    for (int i = 1; i <= 20; ++i)
-    {
-        string str(i, 'X');// создаем переменную длинной в i. Внутри нее X, это и будет строка
-        cout << str << endl;
-    }
-    */
 }
 
 void f6()
@@ -69,39 +62,39 @@ double f7()
     return na4vklad;
 }
 
-class ParsTool
-{
-private:
-    string s;
-    string ctch;
-public:
-    string rs;
-    /*
-    bool isStringWithInt(string s)
-    {
-        if()
-    }
-    */
-    int inToString(string s)
-    {
-        int r;
-        r = stoi(s);
-        return r;
-    }
-
-    string tryInToString(string s)
-    {
-        try
-        {
-            rs = stoi(s);
-        }
-        catch (...)
-        {
-            return ctch;//как нибудь записать сюда ошибку
-        }
-        return rs;
-    }
-};
+//class ParsTool
+//{
+//private:
+//    string s;
+//    string ctch;
+//public:
+//    string rs;
+//    /*
+//    bool isStringWithInt(string s)
+//    {
+//        if()
+//    }
+//    */
+//    int inToString(string s)
+//    {
+//        int r;
+//        r = stoi(s);
+//        return r;
+//    }
+//
+//    string tryInToString(string s)
+//    {
+//        try
+//        {
+//            rs = stoi(s);
+//        }
+//        catch (...)
+//        {
+//            return ctch;//как нибудь записать сюда ошибку
+//        }
+//        return rs;
+//    }
+//};
 
 class EngPounds
 {
@@ -403,3 +396,6 @@ int main()
     f12();
     return 0;
 }
+
+// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
+// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
